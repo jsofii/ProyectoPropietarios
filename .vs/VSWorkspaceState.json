@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\WindowsFormsApplication1",
-    "\\WindowsFormsApplication1\\WindowsFormsApplication1"
+    "\\WindowsFormsApplication1\\WindowsFormsApplication1",
+    "\\WindowsFormsApplication1\\WindowsFormsApplication1\\ModuloReportes"
   ],
-  "SelectedNode": "\\WindowsFormsApplication1\\WindowsFormsApplication1.sln",
+  "SelectedNode": "\\WindowsFormsApplication1\\WindowsFormsApplication1\\ModuloReportes",
   "PreviewInSolutionExplorer": false
 }
