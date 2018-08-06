@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private SqlConnection conn;
 
 
-        public SolicitudDeViaje(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo)
+        public SolicitudDeViaje(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas)
         {
             this.correoInstitucional = correoInstitucional;
             this.nombreCompletoSolicitante = nombreCompletoSolicitante;
@@ -146,7 +146,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
 
         public void guardarEnBase() {
 
-            String idSolicitante;
+            String idSolicitante=""+idUsuario;
             try
             {
                 cnx = new Conexion();
@@ -168,23 +168,25 @@ namespace WindowsFormsApplication1.ModuloFormularios
                 Console.WriteLine(er.ToString());
             }
 
-            try
-            {
-                DateTime thisDay = DateTime.Today;
-                cnx = new Conexion();
-                conn = new SqlConnection(cnx.stringConexion);
-                conn.Open();
-                String sql = "insert into SolicitudReserva(idMotivoViaje,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
-                    "values(" + idmotivo + "," + idUsuario + "," + idLugar + ",'" +  numeroPersonas + "," + fechaSalida +" "+horaSalida+"','" + fechaRetorno + " " + horaRetorno + "','en espera','" +thisDay.ToString() + "')";
-                SqlCommand comando = new SqlCommand(sql, conn);
-                int resultado = comando.ExecuteNonQuery();
-                MessageBox.Show("" + sql);
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Error");
-                Console.WriteLine(er.ToString());
-            }
+            MessageBox.Show("Holaaa");
+
+            //try
+            //{
+            //    DateTime thisDay = DateTime.Today;
+            //    cnx = new Conexion();
+            //    conn = new SqlConnection(cnx.stringConexion);
+            //    conn.Open();
+            //    String sql = "insert into SolicitudReserva(idMotivoViaje,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
+            //        "values(" + idmotivo + "," + idUsuario + "," + idLugar + ",'" +  numeroPersonas + "," + fechaSalida +" "+horaSalida+"','" + fechaRetorno + " " + horaRetorno + "','en espera','" +thisDay.ToString() + "')";
+            //    SqlCommand comando = new SqlCommand(sql, conn);
+            //    int resultado = comando.ExecuteNonQuery();
+            //    MessageBox.Show("" + sql);
+            //}
+            //catch (Exception er)
+            //{
+            //    MessageBox.Show("Error");
+            //    Console.WriteLine(er.ToString());
+            //}
 
 
 

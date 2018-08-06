@@ -29,6 +29,7 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             FrmSolicitudDeViaje sol = new FrmSolicitudDeViaje();
+            sol.setID(idau);
             sol.ShowDialog();
         }
 

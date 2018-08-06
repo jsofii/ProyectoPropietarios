@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
-
+using WindowsFormsApplication1.ModuloFormularios;
 
 namespace ModuloFormularios
 {
@@ -95,7 +95,11 @@ namespace ModuloFormularios
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-          
+            SolicitudDeViaje cssolicitud = new SolicitudDeViaje(txt_ciSolicitante.Text, txt_nombreSolicitante.Text, comboBoxDestinos.SelectedItem.ToString(), dtf_salida.Text, dth_salida.Text, dtf_llegada.Text, dth_llegada.Text, comboBoxDestinos.SelectedItem.ToString(), Int32.Parse(textBox1.Text));
+            cssolicitud.setIDs((comboBoxMotivos.SelectedIndex + 1), (comboBoxDestinos.SelectedIndex + 1), Int32.Parse(id));
+            cssolicitud.guardarEnBase();
+            //MessageBox.Show(""+ txt_ciSolicitante.Text+" "+txt_nombreSolicitante.Text+" "+comboBoxDestinos.SelectedItem.ToString()+" "+dtf_salida.Text+" "+dth_salida.Text, dtf_llegada.Text+" "+dth_llegada.Text+" "+comboBoxDestinos.SelectedItem.ToString()+" "+textBox1.Text);
+            //cssolicitud.setIDs((comboBoxMotivos.SelectedIndex + 1), (comboBoxDestinos.SelectedIndex + 1), Int32.Parse(id));
         }
     }
 }
