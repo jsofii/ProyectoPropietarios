@@ -28,7 +28,8 @@ namespace WindowsFormsApplication1
             //PRUEBAS UNITARIAS
             Application.Run(new FrmReporteHistorialKilometraje());
 
-
+            simuladorLogin log = new simuladorLogin();
+            log.ShowDialog();
 
 
             //SIMULACION LOGIN
