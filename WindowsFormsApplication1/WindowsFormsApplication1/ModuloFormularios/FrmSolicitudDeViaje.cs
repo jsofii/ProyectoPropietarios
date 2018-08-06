@@ -19,6 +19,7 @@ namespace ModuloFormularios
         private Conexion cnx = new Conexion();
         private SqlConnection conn;
         private ArrayList idDestino = new ArrayList();
+        private String id;
         public FrmSolicitudDeViaje()
         {
             InitializeComponent();
@@ -64,58 +65,37 @@ namespace ModuloFormularios
             }
 
         }
-        
-        
-        
+
+        public void setID(String id)
+        {
+            this.id = id;
+            try
+            {
+                Conexion cnx = new Conexion();
+                SqlConnection conn = new SqlConnection(cnx.stringConexion);
+                conn.Open();
+                SqlCommand comando = new SqlCommand("select nombreSolicitante,email from Solicitante where idSolicitante =" + id, conn);
+                SqlDataReader reader = comando.ExecuteReader();
+                String nombre = "", email = "";
+                while (reader.Read())
+                {
+                    nombre = "" + reader[0];
+                    email = "" + reader[1];
+                }
+                txt_ciSolicitante.Text = email;
+                txt_nombreSolicitante.Text = nombre;
+                comboBoxMotivos.SelectedIndex = 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+
+
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-
-            //public CSSolicitudDeViaje( , string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo)
-            //CSSolicitudDeViaje cssolicitud = new CSSolicitudDeViaje(txt_ciSolicitante.Text, txt_nombreSolicitante, comboBoxDestinos.se);
-
-            //idMotivoViaje,idCategoriaUsuario,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
-            //        "values(" + (comboBoxMotivos.SelectedIndex + 1) + "," + 1 + "," + idSol + "," + (comboBoxMotivos.SelectedIndex + 1) + "," + 3 + ",'" +
-            //        dtf_salida.Text + " " + dth_salida.Text + "','" + dtf_llegada.Text + " " + dth_llegada.Text + "','en espera','" + thisDay.ToString() +
-
-            //String idSol = "";
-            //DateTime thisDay = DateTime.Today;
-            //try
-            //{
-            //    cnx = new Conexion();
-            //    conn = new SqlConnection(cnx.stringConexion);
-            //    SqlDataReader reader = null;
-            //    String sql = "select idSolicitante from Solicitante where nombreSolicitante='" + txt_nombreSolicitante.Text + "'";
-            //    conn.Open();
-            //    SqlCommand comando = new SqlCommand(sql, conn);
-            //    reader = comando.ExecuteReader();
-            //    while (reader.Read())
-            //    {
-            //        idSol = "" + reader[0];
-            //    }
-            //    conn.Close();
-            //}
-            //catch (Exception er)
-            //{
-            //    MessageBox.Show("Error");
-            //    Console.WriteLine(er.ToString());
-            //}
-            //try
-            //{
-            //    cnx = new Conexion();
-            //    conn = new SqlConnection(cnx.stringConexion);
-            //    conn.Open();
-            //    String sql = "insert into SolicitudReserva(idMotivoViaje,idCategoriaUsuario,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
-            //        "values(" + (comboBoxMotivos.SelectedIndex + 1) + "," + 1 + "," + idSol + "," + (comboBoxMotivos.SelectedIndex + 1) + "," + 3 + ",'" +
-            //        dtf_salida.Text + " " + dth_salida.Text + "','" + dtf_llegada.Text + " " + dth_llegada.Text + "','en espera','" + thisDay.ToString() + "')";
-            //    SqlCommand comando = new SqlCommand(sql, conn);
-            //    int resultado = comando.ExecuteNonQuery();
-            //    MessageBox.Show("" + sql);
-            //}
-            //catch (Exception er)
-            //{
-            //    MessageBox.Show("Error");
-            //    Console.WriteLine(er.ToString());
-            //}
+          
         }
     }
 }

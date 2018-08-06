@@ -26,8 +26,8 @@ namespace WindowsFormsApplication1
             Application.SetCompatibleTextRenderingDefault(false);
 
             //PRUEBAS UNITARIAS
-            Application.Run(new FrmReporteHistorialKilometraje());
-
+            //Application.Run(new FrmReporteHistorialKilometraje());
+            Application.Run(new simuladorLogin());
 
 
 

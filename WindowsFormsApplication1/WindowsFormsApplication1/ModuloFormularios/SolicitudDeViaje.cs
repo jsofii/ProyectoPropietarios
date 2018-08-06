@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1.ModuloFormularios
 {
-    class CSSolicitudDeViaje
+    class SolicitudDeViaje
     {
         private string correoInstitucional;
         private string nombreCompletoSolicitante;
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private SqlConnection conn;
 
 
-        public CSSolicitudDeViaje(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo)
+        public SolicitudDeViaje(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo)
         {
             this.correoInstitucional = correoInstitucional;
             this.nombreCompletoSolicitante = nombreCompletoSolicitante;
