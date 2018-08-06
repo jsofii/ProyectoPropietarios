@@ -171,12 +171,6 @@
     <Compile Include="ModuloReserva\Reserva.cs" />
     <Compile Include="ModuloReserva\Vehiculo.cs" />
     <Compile Include="ModuloReserva\Viaje.cs" />
-    <Compile Include="ModuloNotificaciones\Vista\Formulario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloNotificaciones\Vista\Formulario.Designer.cs">
-      <DependentUpon>Formulario.cs</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -220,9 +214,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ModuloNotificaciones\Vista\Formulario.resx">
-      <DependentUpon>Formulario.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="ModuloReportesEstadisticos\DataSetHistorialKilometraje.xsc">
       <DependentUpon>DataSetHistorialKilometraje.xsd</DependentUpon>
     </None>
