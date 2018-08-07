@@ -25,11 +25,16 @@ namespace WindowsFormsApplication1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //PRUEBAS UNITARIAS
-            Application.Run(new FrmReporteHistorialKilometraje());
+            ////PRUEBAS UNITARIAS
+            //Application.Run(new FrmReporteHistorialKilometraje());
 
-            simuladorLogin log = new simuladorLogin();
-            log.ShowDialog();
+            //simuladorLogin log = new simuladorLogin();
+            //log.ShowDialog();
+
+
+            Application.Run(new FormLogin());
+
+
 
 
             //SIMULACION LOGIN
