@@ -123,6 +123,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetViajes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ModuloReportesEstadisticos\FrmMenuPrincipalReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloReportesEstadisticos\FrmMenuPrincipalReportes.Designer.cs">
+      <DependentUpon>FrmMenuPrincipalReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModuloReportesEstadisticos\FrmReporteHistorialKilometraje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloNotificaciones\Vista\solicitudesPendientes.resx">
       <DependentUpon>solicitudesPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloReportesEstadisticos\FrmMenuPrincipalReportes.resx">
+      <DependentUpon>FrmMenuPrincipalReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloReportesEstadisticos\FrmReporteHistorialKilometraje.resx">
       <DependentUpon>FrmReporteHistorialKilometraje.cs</DependentUpon>
