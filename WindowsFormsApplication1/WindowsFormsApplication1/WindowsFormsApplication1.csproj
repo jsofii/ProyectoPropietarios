@@ -116,12 +116,6 @@
     <Compile Include="ModuloNotificaciones\SimuladorLogin\ListaNotificaciones.Designer.cs">
       <DependentUpon>ListaNotificaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModuloNotificaciones\Vista\OpcionesAutoridad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloNotificaciones\Vista\OpcionesAutoridad.Designer.cs">
-      <DependentUpon>OpcionesAutoridad.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModuloNotificaciones\Vista\solicitudesPendientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,9 +208,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloNotificaciones\SimuladorLogin\simuladorLogin.resx">
       <DependentUpon>simuladorLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloNotificaciones\Vista\OpcionesAutoridad.resx">
-      <DependentUpon>OpcionesAutoridad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloNotificaciones\Vista\solicitudesPendientes.resx">
       <DependentUpon>solicitudesPendientes.cs</DependentUpon>
