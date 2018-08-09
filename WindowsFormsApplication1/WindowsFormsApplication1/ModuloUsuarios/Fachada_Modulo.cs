@@ -4,6 +4,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using WindowsFormsApplication1.ModuloReportesEstadisticos;
+using WindowsFormsApplication1.ModuloVehiculo.Formularios;
 
 namespace WindowsFormsApplication1
 {
@@ -13,6 +15,8 @@ namespace WindowsFormsApplication1
         Cargo cargo = new Cargo();
         Usuario usuario = new Usuario();
         FormDatos frmDatos = new FormDatos();
+        mdiModVehiculo frmVehi = new mdiModVehiculo();
+        //FrmReporteHistorialKilometraje frmRep
 
 
         public Fachada_Modulo(FormMenu frm, String user)
@@ -134,6 +138,13 @@ namespace WindowsFormsApplication1
 
             privilegiosDatos();
             mostrarMódulo(frmMenú, frmDatos);
+        }
+
+
+        public void mostrarModvehiculo(FormMenu frmMenú)
+        {
+            mostrarMódulo(frmMenú, frmVehi);
+
         }
 
 

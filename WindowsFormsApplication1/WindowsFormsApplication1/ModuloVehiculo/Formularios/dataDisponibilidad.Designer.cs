@@ -31,10 +31,10 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dataDisponibilidad));
-            this.sistemaAAPDataSet1 = new MODULO_VEHICULO.sistemaAAPDataSet();
+            //this.sistemaAAPDataSet1 = new MODULO_VEHICULO.sistemaAAPDataSet();
             this.disponibilidadVehiculoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.disponibilidadVehiculoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter();
-            this.tableAdapterManager = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager();
+            //this.disponibilidadVehiculoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter();
+            //this.tableAdapterManager = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager();
             this.disponibilidadVehiculoBindingSource1BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.disponibilidadVehiculoDataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingSource1BindingNavigator)).BeginInit();
             this.disponibilidadVehiculoBindingSource1BindingNavigator.SuspendLayout();
@@ -52,38 +52,38 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             // 
             // sistemaAAPDataSet1
             // 
-            this.sistemaAAPDataSet1.DataSetName = "sistemaAAPDataSet";
-            this.sistemaAAPDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // this.sistemaAAPDataSet1.DataSetName = "sistemaAAPDataSet";
+            // this.sistemaAAPDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // disponibilidadVehiculoBindingSource1
             // 
             this.disponibilidadVehiculoBindingSource1.DataMember = "DisponibilidadVehiculo";
-            this.disponibilidadVehiculoBindingSource1.DataSource = this.sistemaAAPDataSet1;
+            //this.disponibilidadVehiculoBindingSource1.DataSource = this.sistemaAAPDataSet1;
             // 
             // disponibilidadVehiculoTableAdapter
             // 
-            this.disponibilidadVehiculoTableAdapter.ClearBeforeFill = true;
+            // this.disponibilidadVehiculoTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CHOFERTableAdapter = null;
-            this.tableAdapterManager.DisponibilidadVehiculoTableAdapter = this.disponibilidadVehiculoTableAdapter;
-            this.tableAdapterManager.HistorialKilometrajeTableAdapter = null;
-            this.tableAdapterManager.incidenciaTableAdapter = null;
-            this.tableAdapterManager.IncidenciaVehiculoTableAdapter = null;
-            this.tableAdapterManager.LugarTableAdapter = null;
-            this.tableAdapterManager.MantenimientoTableAdapter = null;
-            this.tableAdapterManager.MotivoViajeTableAdapter = null;
-            this.tableAdapterManager.NominaProfesoresTableAdapter = null;
-            this.tableAdapterManager.NotificacionMantenimientoTableAdapter = null;
-            this.tableAdapterManager.NotificacionRutaTableAdapter = null;
-            this.tableAdapterManager.Reporte_ConductorTableAdapter = null;
-            this.tableAdapterManager.RESERVAAPROBADATableAdapter = null;
-            this.tableAdapterManager.SolicitanteTableAdapter = null;
-            this.tableAdapterManager.SolicitudReservaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VEHICULOTableAdapter = null;
+            // this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.CHOFERTableAdapter = null;
+            //this.tableAdapterManager.DisponibilidadVehiculoTableAdapter = this.disponibilidadVehiculoTableAdapter;
+            //this.tableAdapterManager.HistorialKilometrajeTableAdapter = null;
+            //this.tableAdapterManager.incidenciaTableAdapter = null;
+            //this.tableAdapterManager.IncidenciaVehiculoTableAdapter = null;
+            // this.tableAdapterManager.LugarTableAdapter = null;
+            // this.tableAdapterManager.MantenimientoTableAdapter = null;
+            //this.tableAdapterManager.MotivoViajeTableAdapter = null;
+            //this.tableAdapterManager.NominaProfesoresTableAdapter = null;
+            //this.tableAdapterManager.NotificacionMantenimientoTableAdapter = null;
+            //this.tableAdapterManager.NotificacionRutaTableAdapter = null;
+            //this.tableAdapterManager.Reporte_ConductorTableAdapter = null;
+            //this.tableAdapterManager.RESERVAAPROBADATableAdapter = null;
+            //this.tableAdapterManager.SolicitanteTableAdapter = null;
+            //this.tableAdapterManager.SolicitudReservaTableAdapter = null;
+            //this.tableAdapterManager.UpdateOrder = MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.VEHICULOTableAdapter = null;
             // 
             // disponibilidadVehiculoBindingSource1BindingNavigator
             // 
@@ -180,7 +180,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             this.Controls.Add(this.disponibilidadVehiculoBindingSource1BindingNavigator);
             this.Name = "dataDisponibilidad";
             this.Load += new System.EventHandler(this.dataDisponibilidad_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet1)).EndInit();
+            // ((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingSource1BindingNavigator)).EndInit();
             this.disponibilidadVehiculoBindingSource1BindingNavigator.ResumeLayout(false);
@@ -193,7 +193,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
 
         #endregion
 
-        private sistemaAAPDataSet sistemaAAPDataSet;
+        //private sistemaAAPDataSet sistemaAAPDataSet;
         private System.Windows.Forms.BindingSource disponibilidadVehiculoBindingSource;
         private System.Windows.Forms.BindingNavigator disponibilidadVehiculoBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
@@ -214,10 +214,10 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private sistemaAAPDataSet sistemaAAPDataSet1;
+        //private sistemaAAPDataSet sistemaAAPDataSet1;
         private System.Windows.Forms.BindingSource disponibilidadVehiculoBindingSource1;
-        private sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter disponibilidadVehiculoTableAdapter;
-        private sistemaAAPDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        // private sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter disponibilidadVehiculoTableAdapter;
+        //private sistemaAAPDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator disponibilidadVehiculoBindingSource1BindingNavigator;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.DataGridView disponibilidadVehiculoDataGridView1;
