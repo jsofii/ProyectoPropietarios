@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
             //log.ShowDialog();
 
 
-            Application.Run(new FormLogin());
+            Application.Run(new FormMenu());
 
 
 

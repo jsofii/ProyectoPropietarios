@@ -16,14 +16,10 @@ namespace WindowsFormsApplication1
 {
     public partial class FormMenu : Form
     {
+        Modulo fm1;
 
-
-        Fachada_Modulo fm1;
-
-
-      
         
-        public void iniciar(Fachada_Modulo fm)
+        public void iniciar(Modulo fm)
         {
             fm1 = fm;
         }
@@ -32,7 +28,11 @@ namespace WindowsFormsApplication1
         public FormMenu()
         {
             InitializeComponent();
-            
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            iconmaximizar.Visible = false;
+            iconrestaurar.Visible = true;
+
         }
 
         private void iconCerrar_Click(object sender, EventArgs e)
@@ -87,11 +87,12 @@ namespace WindowsFormsApplication1
             iconrestaurar.Visible = true;
         }
 
+
         private void iconrestaurar_Click(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Normal;
-            this.Size = new Size(SW, SH);
-            this.Location = new Point(LX,LY);
+            this.Size = new Size(1120, 650);
+            this.Location = new Point(100,30);
             iconmaximizar.Visible = true;
             iconrestaurar.Visible = false;
         }
@@ -136,6 +137,7 @@ namespace WindowsFormsApplication1
         private int tolerance = 15;
         private const int WM_NCHITTEST = 132;
         private const int HTBOTTOMRIGHT = 17;
+
         private Rectangle sizeGripRectangle;
 
         private void btnCerrarSesión_Click(object sender, EventArgs e)

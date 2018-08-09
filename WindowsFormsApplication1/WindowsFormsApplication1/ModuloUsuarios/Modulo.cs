@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public class Fachada_Modulo
+    public class Modulo
     {
 
         Cargo cargo = new Cargo();
@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
         FormDatos frmDatos = new FormDatos();
 
 
-        public Fachada_Modulo(FormMenu frm, String user)
+        public Modulo(FormMenu frm, String user)
         {
 
 
@@ -129,9 +129,10 @@ namespace WindowsFormsApplication1
             fh.Show();
         }
 
+
+
         public void mostrarDatos(FormMenu frmMenú)
         {
-
             privilegiosDatos();
             mostrarMódulo(frmMenú, frmDatos);
         }
@@ -143,8 +144,6 @@ namespace WindowsFormsApplication1
             {
                 frmDatos.bGuardar.Visible = true;
                 frmDatos.btnLimpiar.Visible = true;
-               
-
 
             }
             else if (cargo.IDcargo1 == 2)
