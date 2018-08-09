@@ -104,18 +104,6 @@
     <Compile Include="ModuloFormularios\FrmReporteConductor.Designer.cs">
       <DependentUpon>FrmReporteConductor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModuloNotificaciones\SimuladorLogin\simuladorLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloNotificaciones\SimuladorLogin\simuladorLogin.Designer.cs">
-      <DependentUpon>simuladorLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloNotificaciones\SimuladorLogin\ListaNotificaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloNotificaciones\SimuladorLogin\ListaNotificaciones.Designer.cs">
-      <DependentUpon>ListaNotificaciones.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModuloNotificaciones\Vista\solicitudesPendientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,12 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloFormularios\FrmSolicitudDeViaje.resx">
       <DependentUpon>FrmSolicitudDeViaje.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloNotificaciones\SimuladorLogin\ListaNotificaciones.resx">
-      <DependentUpon>ListaNotificaciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloNotificaciones\SimuladorLogin\simuladorLogin.resx">
-      <DependentUpon>simuladorLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloNotificaciones\Vista\solicitudesPendientes.resx">
       <DependentUpon>solicitudesPendientes.cs</DependentUpon>
