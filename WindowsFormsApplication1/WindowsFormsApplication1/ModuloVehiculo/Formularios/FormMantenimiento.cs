@@ -21,16 +21,16 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
         {
             this.Validate();
             this.mantenimientoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
+            // this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
 
         }
 
         private void FormMantenimiento_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.HistorialKilometraje' Puede moverla o quitarla según sea necesario.
-            this.historialKilometrajeTableAdapter.Fill(this.sistemaAAPDataSet.HistorialKilometraje);
+            // this.historialKilometrajeTableAdapter.Fill(this.sistemaAAPDataSet.HistorialKilometraje);
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.Mantenimiento' Puede moverla o quitarla según sea necesario.
-            this.mantenimientoTableAdapter.Fill(this.sistemaAAPDataSet.Mantenimiento);
+            //this.mantenimientoTableAdapter.Fill(this.sistemaAAPDataSet.Mantenimiento);
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             {
                 this.Validate();
                 this.mantenimientoBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
+                //  this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
             }
             catch
             {

@@ -199,6 +199,11 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void btnVehículos_Click(object sender, EventArgs e)
+        {
+            fm1.mostrarModvehiculo(this);
+        }
+
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)

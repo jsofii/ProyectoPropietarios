@@ -36,10 +36,10 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             System.Windows.Forms.Label iDVEHICULOLabel;
             System.Windows.Forms.Label fecha_finLabel;
             System.Windows.Forms.Label fecha_mantenimientoLabel;
-            this.sistemaAAPDataSet = new MODULO_VEHICULO.sistemaAAPDataSet();
+            // this.sistemaAAPDataSet = new MODULO_VEHICULO.sistemaAAPDataSet();
             this.disponibilidadVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.disponibilidadVehiculoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter();
-            this.tableAdapterManager = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager();
+            // this.disponibilidadVehiculoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter();
+            // this.tableAdapterManager = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager();
             this.disponibilidadVehiculoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -54,9 +54,9 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.disponibilidadVehiculoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.vEHICULOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vEHICULOTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter();
+            // this.vEHICULOTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter();
             this.mantenimientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mantenimientoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.MantenimientoTableAdapter();
+            // this.mantenimientoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.MantenimientoTableAdapter();
             this.idDisponibilidadVehiculoTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.iDVEHICULOTextBox = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             iDVEHICULOLabel = new System.Windows.Forms.Label();
             fecha_finLabel = new System.Windows.Forms.Label();
             fecha_mantenimientoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingNavigator)).BeginInit();
             this.disponibilidadVehiculoBindingNavigator.SuspendLayout();
@@ -77,38 +77,38 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             // 
             // sistemaAAPDataSet
             // 
-            this.sistemaAAPDataSet.DataSetName = "sistemaAAPDataSet";
-            this.sistemaAAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // this.sistemaAAPDataSet.DataSetName = "sistemaAAPDataSet";
+            // this.sistemaAAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // disponibilidadVehiculoBindingSource
             // 
             this.disponibilidadVehiculoBindingSource.DataMember = "DisponibilidadVehiculo";
-            this.disponibilidadVehiculoBindingSource.DataSource = this.sistemaAAPDataSet;
+            //this.disponibilidadVehiculoBindingSource.DataSource = this.sistemaAAPDataSet;
             // 
             // disponibilidadVehiculoTableAdapter
             // 
-            this.disponibilidadVehiculoTableAdapter.ClearBeforeFill = true;
+            //this.disponibilidadVehiculoTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CHOFERTableAdapter = null;
-            this.tableAdapterManager.DisponibilidadVehiculoTableAdapter = this.disponibilidadVehiculoTableAdapter;
-            this.tableAdapterManager.HistorialKilometrajeTableAdapter = null;
-            this.tableAdapterManager.incidenciaTableAdapter = null;
-            this.tableAdapterManager.IncidenciaVehiculoTableAdapter = null;
-            this.tableAdapterManager.LugarTableAdapter = null;
-            this.tableAdapterManager.MantenimientoTableAdapter = null;
-            this.tableAdapterManager.MotivoViajeTableAdapter = null;
-            this.tableAdapterManager.NominaProfesoresTableAdapter = null;
-            this.tableAdapterManager.NotificacionMantenimientoTableAdapter = null;
-            this.tableAdapterManager.NotificacionRutaTableAdapter = null;
-            this.tableAdapterManager.Reporte_ConductorTableAdapter = null;
-            this.tableAdapterManager.RESERVAAPROBADATableAdapter = null;
-            this.tableAdapterManager.SolicitanteTableAdapter = null;
-            this.tableAdapterManager.SolicitudReservaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VEHICULOTableAdapter = null;
+            //this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.CHOFERTableAdapter = null;
+            //this.tableAdapterManager.DisponibilidadVehiculoTableAdapter = this.disponibilidadVehiculoTableAdapter;
+            //this.tableAdapterManager.HistorialKilometrajeTableAdapter = null;
+            // this.tableAdapterManager.incidenciaTableAdapter = null;
+            //this.tableAdapterManager.IncidenciaVehiculoTableAdapter = null;
+            // this.tableAdapterManager.LugarTableAdapter = null;
+            //this.tableAdapterManager.MantenimientoTableAdapter = null;
+            //this.tableAdapterManager.MotivoViajeTableAdapter = null;
+            //this.tableAdapterManager.NominaProfesoresTableAdapter = null;
+            //this.tableAdapterManager.NotificacionMantenimientoTableAdapter = null;
+            // this.tableAdapterManager.NotificacionRutaTableAdapter = null;
+            //this.tableAdapterManager.Reporte_ConductorTableAdapter = null;
+            //this.tableAdapterManager.RESERVAAPROBADATableAdapter = null;
+            //this.tableAdapterManager.SolicitanteTableAdapter = null;
+            // this.tableAdapterManager.SolicitudReservaTableAdapter = null;
+            // this.tableAdapterManager.UpdateOrder = MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.VEHICULOTableAdapter = null;
             // 
             // disponibilidadVehiculoBindingNavigator
             // 
@@ -239,20 +239,20 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             // vEHICULOBindingSource
             // 
             this.vEHICULOBindingSource.DataMember = "VEHICULO";
-            this.vEHICULOBindingSource.DataSource = this.sistemaAAPDataSet;
+            // this.vEHICULOBindingSource.DataSource = this.sistemaAAPDataSet;
             // 
             // vEHICULOTableAdapter
             // 
-            this.vEHICULOTableAdapter.ClearBeforeFill = true;
+            //this.vEHICULOTableAdapter.ClearBeforeFill = true;
             // 
             // mantenimientoBindingSource
             // 
             this.mantenimientoBindingSource.DataMember = "Mantenimiento";
-            this.mantenimientoBindingSource.DataSource = this.sistemaAAPDataSet;
+            //this.mantenimientoBindingSource.DataSource = this.sistemaAAPDataSet;
             // 
             // mantenimientoTableAdapter
             // 
-            this.mantenimientoTableAdapter.ClearBeforeFill = true;
+            //this.mantenimientoTableAdapter.ClearBeforeFill = true;
             // 
             // idDisponibilidadVehiculoLabel
             // 
@@ -363,7 +363,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             this.Name = "FormDisponibilidad";
             this.Text = "FormDisponibilidad";
             this.Load += new System.EventHandler(this.FormDisponibilidad_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.disponibilidadVehiculoBindingNavigator)).EndInit();
             this.disponibilidadVehiculoBindingNavigator.ResumeLayout(false);
@@ -377,10 +377,10 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
 
         #endregion
 
-        private sistemaAAPDataSet sistemaAAPDataSet;
+        //private sistemaAAPDataSet sistemaAAPDataSet;
         private System.Windows.Forms.BindingSource disponibilidadVehiculoBindingSource;
-        private sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter disponibilidadVehiculoTableAdapter;
-        private sistemaAAPDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        // private sistemaAAPDataSetTableAdapters.DisponibilidadVehiculoTableAdapter disponibilidadVehiculoTableAdapter;
+        //private sistemaAAPDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator disponibilidadVehiculoBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -395,9 +395,9 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton disponibilidadVehiculoBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingSource vEHICULOBindingSource;
-        private sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter vEHICULOTableAdapter;
+        //private sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter vEHICULOTableAdapter;
         private System.Windows.Forms.BindingSource mantenimientoBindingSource;
-        private sistemaAAPDataSetTableAdapters.MantenimientoTableAdapter mantenimientoTableAdapter;
+        //private sistemaAAPDataSetTableAdapters.MantenimientoTableAdapter mantenimientoTableAdapter;
         private System.Windows.Forms.TextBox idDisponibilidadVehiculoTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox iDVEHICULOTextBox;

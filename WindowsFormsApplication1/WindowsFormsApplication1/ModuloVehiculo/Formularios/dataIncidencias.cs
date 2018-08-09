@@ -21,16 +21,16 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
         {
             this.Validate();
             this.incidenciaVehiculoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
+            //  this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
 
         }
 
         private void dataIncidencias_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.incidencia' Puede moverla o quitarla según sea necesario.
-            this.incidenciaTableAdapter.Fill(this.sistemaAAPDataSet.incidencia);
+            //this.incidenciaTableAdapter.Fill(this.sistemaAAPDataSet.incidencia);
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.IncidenciaVehiculo' Puede moverla o quitarla según sea necesario.
-            this.incidenciaVehiculoTableAdapter.Fill(this.sistemaAAPDataSet.IncidenciaVehiculo);
+            //this.incidenciaVehiculoTableAdapter.Fill(this.sistemaAAPDataSet.IncidenciaVehiculo);
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             {
                 this.Validate();
                 this.incidenciaVehiculoBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
+                //  this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
             }
             catch
             {

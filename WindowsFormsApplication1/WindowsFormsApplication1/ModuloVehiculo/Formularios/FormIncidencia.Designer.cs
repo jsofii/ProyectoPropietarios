@@ -36,10 +36,10 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             System.Windows.Forms.Label iDVEHICULOLabel;
             System.Windows.Forms.Label horaLabel;
             System.Windows.Forms.Label fechaLabel;
-            this.sistemaAAPDataSet = new MODULO_VEHICULO.sistemaAAPDataSet();
+            // this.sistemaAAPDataSet = new MODULO_VEHICULO.sistemaAAPDataSet();
             this.incidenciaVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.incidenciaVehiculoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.IncidenciaVehiculoTableAdapter();
-            this.tableAdapterManager = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager();
+            //this.incidenciaVehiculoTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.IncidenciaVehiculoTableAdapter();
+            //this.tableAdapterManager = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager();
             this.incidenciaVehiculoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             this.vEHICULOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaAAPDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaAAPDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vEHICULOTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter();
+            //this.vEHICULOTableAdapter = new MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter();
             this.idIncidenciaVehiculoTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.iDVEHICULOTextBox = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             iDVEHICULOLabel = new System.Windows.Forms.Label();
             horaLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidenciaVehiculoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidenciaVehiculoBindingNavigator)).BeginInit();
             this.incidenciaVehiculoBindingNavigator.SuspendLayout();
@@ -78,38 +78,38 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             // 
             // sistemaAAPDataSet
             // 
-            this.sistemaAAPDataSet.DataSetName = "sistemaAAPDataSet";
-            this.sistemaAAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.sistemaAAPDataSet.DataSetName = "sistemaAAPDataSet";
+            //this.sistemaAAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // incidenciaVehiculoBindingSource
             // 
             this.incidenciaVehiculoBindingSource.DataMember = "IncidenciaVehiculo";
-            this.incidenciaVehiculoBindingSource.DataSource = this.sistemaAAPDataSet;
+            //this.incidenciaVehiculoBindingSource.DataSource = this.sistemaAAPDataSet;
             // 
             // incidenciaVehiculoTableAdapter
             // 
-            this.incidenciaVehiculoTableAdapter.ClearBeforeFill = true;
+            //this.incidenciaVehiculoTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CHOFERTableAdapter = null;
-            this.tableAdapterManager.DisponibilidadVehiculoTableAdapter = null;
-            this.tableAdapterManager.HistorialKilometrajeTableAdapter = null;
-            this.tableAdapterManager.incidenciaTableAdapter = null;
-            this.tableAdapterManager.IncidenciaVehiculoTableAdapter = this.incidenciaVehiculoTableAdapter;
-            this.tableAdapterManager.LugarTableAdapter = null;
-            this.tableAdapterManager.MantenimientoTableAdapter = null;
-            this.tableAdapterManager.MotivoViajeTableAdapter = null;
-            this.tableAdapterManager.NominaProfesoresTableAdapter = null;
-            this.tableAdapterManager.NotificacionMantenimientoTableAdapter = null;
-            this.tableAdapterManager.NotificacionRutaTableAdapter = null;
-            this.tableAdapterManager.Reporte_ConductorTableAdapter = null;
-            this.tableAdapterManager.RESERVAAPROBADATableAdapter = null;
-            this.tableAdapterManager.SolicitanteTableAdapter = null;
-            this.tableAdapterManager.SolicitudReservaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VEHICULOTableAdapter = null;
+            //this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.CHOFERTableAdapter = null;
+            //this.tableAdapterManager.DisponibilidadVehiculoTableAdapter = null;
+            //this.tableAdapterManager.HistorialKilometrajeTableAdapter = null;
+            //this.tableAdapterManager.incidenciaTableAdapter = null;
+            //this.tableAdapterManager.IncidenciaVehiculoTableAdapter = this.incidenciaVehiculoTableAdapter;
+            //this.tableAdapterManager.LugarTableAdapter = null;
+            //this.tableAdapterManager.MantenimientoTableAdapter = null;
+            //this.tableAdapterManager.MotivoViajeTableAdapter = null;
+            //this.tableAdapterManager.NominaProfesoresTableAdapter = null;
+            //this.tableAdapterManager.NotificacionMantenimientoTableAdapter = null;
+            //this.tableAdapterManager.NotificacionRutaTableAdapter = null;
+            //this.tableAdapterManager.Reporte_ConductorTableAdapter = null;
+            //this.tableAdapterManager.RESERVAAPROBADATableAdapter = null;
+            //this.tableAdapterManager.SolicitanteTableAdapter = null;
+            //this.tableAdapterManager.SolicitudReservaTableAdapter = null;
+            //this.tableAdapterManager.UpdateOrder = MODULO_VEHICULO.sistemaAAPDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.VEHICULOTableAdapter = null;
             // 
             // incidenciaVehiculoBindingNavigator
             // 
@@ -240,21 +240,21 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             // vEHICULOBindingSource
             // 
             this.vEHICULOBindingSource.DataMember = "VEHICULO";
-            this.vEHICULOBindingSource.DataSource = this.sistemaAAPDataSet;
+            //this.vEHICULOBindingSource.DataSource = this.sistemaAAPDataSet;
             // 
             // sistemaAAPDataSetBindingSource
             // 
-            this.sistemaAAPDataSetBindingSource.DataSource = this.sistemaAAPDataSet;
+            //this.sistemaAAPDataSetBindingSource.DataSource = this.sistemaAAPDataSet;
             this.sistemaAAPDataSetBindingSource.Position = 0;
             // 
             // sistemaAAPDataSetBindingSource1
             // 
-            this.sistemaAAPDataSetBindingSource1.DataSource = this.sistemaAAPDataSet;
+            //this.sistemaAAPDataSetBindingSource1.DataSource = this.sistemaAAPDataSet;
             this.sistemaAAPDataSetBindingSource1.Position = 0;
             // 
             // vEHICULOTableAdapter
             // 
-            this.vEHICULOTableAdapter.ClearBeforeFill = true;
+            //this.vEHICULOTableAdapter.ClearBeforeFill = true;
             // 
             // idIncidenciaVehiculoLabel
             // 
@@ -360,7 +360,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             this.Name = "FormIncidencia";
             this.Text = "FormIncidencia_Vehiculocs";
             this.Load += new System.EventHandler(this.FormIncidencia_Vehiculocs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.sistemaAAPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidenciaVehiculoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidenciaVehiculoBindingNavigator)).EndInit();
             this.incidenciaVehiculoBindingNavigator.ResumeLayout(false);
@@ -375,10 +375,10 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
 
         #endregion
 
-        private sistemaAAPDataSet sistemaAAPDataSet;
+        //private sistemaAAPDataSet sistemaAAPDataSet;
         private System.Windows.Forms.BindingSource incidenciaVehiculoBindingSource;
-        private sistemaAAPDataSetTableAdapters.IncidenciaVehiculoTableAdapter incidenciaVehiculoTableAdapter;
-        private sistemaAAPDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        //private sistemaAAPDataSetTableAdapters.IncidenciaVehiculoTableAdapter incidenciaVehiculoTableAdapter;
+        //private sistemaAAPDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator incidenciaVehiculoBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -395,7 +395,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
         private System.Windows.Forms.BindingSource sistemaAAPDataSetBindingSource1;
         private System.Windows.Forms.BindingSource sistemaAAPDataSetBindingSource;
         private System.Windows.Forms.BindingSource vEHICULOBindingSource;
-        private sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter vEHICULOTableAdapter;
+        //private sistemaAAPDataSetTableAdapters.VEHICULOTableAdapter vEHICULOTableAdapter;
         private System.Windows.Forms.TextBox idIncidenciaVehiculoTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.TextBox iDVEHICULOTextBox;

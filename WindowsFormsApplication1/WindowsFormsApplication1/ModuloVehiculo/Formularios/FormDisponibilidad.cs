@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1.ModuloVehiculo.Formularios
             {
             this.Validate();
             this.disponibilidadVehiculoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
+                //this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
             }
             catch
             {
@@ -39,13 +39,13 @@ MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
         private void FormDisponibilidad_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.Mantenimiento' Puede moverla o quitarla según sea necesario.
-            this.mantenimientoTableAdapter.Fill(this.sistemaAAPDataSet.Mantenimiento);
+            // this.mantenimientoTableAdapter.Fill(this.sistemaAAPDataSet.Mantenimiento);
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.VEHICULO' Puede moverla o quitarla según sea necesario.
-            this.vEHICULOTableAdapter.Fill(this.sistemaAAPDataSet.VEHICULO);
+            //this.vEHICULOTableAdapter.Fill(this.sistemaAAPDataSet.VEHICULO);
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.VEHICULO' Puede moverla o quitarla según sea necesario.
-            this.vEHICULOTableAdapter.Fill(this.sistemaAAPDataSet.VEHICULO);
+            //this.vEHICULOTableAdapter.Fill(this.sistemaAAPDataSet.VEHICULO);
             // TODO: esta línea de código carga datos en la tabla 'sistemaAAPDataSet.DisponibilidadVehiculo' Puede moverla o quitarla según sea necesario.
-            this.disponibilidadVehiculoTableAdapter.Fill(this.sistemaAAPDataSet.DisponibilidadVehiculo);
+            //this.disponibilidadVehiculoTableAdapter.Fill(this.sistemaAAPDataSet.DisponibilidadVehiculo);
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
@@ -62,7 +62,7 @@ MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
             {
                 this.Validate();
                 this.disponibilidadVehiculoBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
+                //  this.tableAdapterManager.UpdateAll(this.sistemaAAPDataSet);
             }
             catch
             {
