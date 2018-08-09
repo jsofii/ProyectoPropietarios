@@ -44,10 +44,13 @@ namespace WindowsFormsApplication1
            string x;
            int idusuario = Convert.ToInt32(row["idusuario"]);
            string facultad = Convert.ToString(row["departamento"]);
+            MessageBox.Show(facultad);
           // MessageBox.Show("  select *from SolicitudReserva where idSolicitante in (select idSolicitante from Solicitante where facultad ='" + facultad + "'");
-           cn.CargarDatos("  select  nombre, fechasalida, from SolicitudReserva where estadosolicitud = 'en espera' AND idusuario in (select idusuario from usuarios where departamento ='" + facultad + "') ", dataGridView1);
-         //  */
-           // cn.CargarDatos("select * from usuarios", dataGridView1);
+           cn.CargarDatos("   select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND departamento ='"+facultad+"'", dataGridView1);
+           // MessageBox.Show("    select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND departamento = ' " + facultad + "'");
+         // cn.CargarDatos("select * from usuarios", dataGridView1);
         }
     }
 }
+
+
