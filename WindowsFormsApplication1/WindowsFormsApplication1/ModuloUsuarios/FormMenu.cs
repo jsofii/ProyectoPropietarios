@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
 
 
         Fachada_Modulo fm1;
+        String auxuser;
 
 
       
@@ -29,9 +30,10 @@ namespace WindowsFormsApplication1
         }
 
         
-        public FormMenu()
+        public FormMenu(String user)
         {
             InitializeComponent();
+            auxuser = user;
             
         }
 
@@ -172,6 +174,29 @@ namespace WindowsFormsApplication1
 
             }
             
+        }
+
+        private void btnReservas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNotificaciones_Click(object sender, EventArgs e)
+        {
+            solicitudesPendientes sol = new solicitudesPendientes(auxuser);
+            sol.ShowDialog();
+
+
+        }
+
+        private void lbNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCorreo_Click(object sender, EventArgs e)
+        {
+
         }
 
         protected override void WndProc(ref Message m)

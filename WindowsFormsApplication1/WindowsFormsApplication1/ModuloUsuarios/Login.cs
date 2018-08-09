@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
         public void iniciarSesion(String user)
         {
           
-            facade = new Fachada_Modulo(new FormMenu(), user);
+            facade = new Fachada_Modulo(new FormMenu(user), user);
             
 
         }
