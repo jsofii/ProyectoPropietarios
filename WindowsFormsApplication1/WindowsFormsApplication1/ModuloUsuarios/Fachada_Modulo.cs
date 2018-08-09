@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
             obtenerDatosCargo(user);
             obtenerDatosUsuario(user);
 
-            FormMenu frm1 = frm;
+            FormMenu frm1 = new FormMenu(user);
             privilegiosMenu(frm);
             frm1.iniciar(this);
             frm1.Show();

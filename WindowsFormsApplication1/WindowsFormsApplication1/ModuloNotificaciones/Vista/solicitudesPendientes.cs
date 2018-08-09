@@ -12,10 +12,10 @@ namespace WindowsFormsApplication1
 {
     public partial class solicitudesPendientes : Form
     {
-        string idautoridad;
-        public solicitudesPendientes(string idauto)
+        string auxemail;
+        public solicitudesPendientes(string email)
         {
-            idautoridad = idauto;
+            auxemail = email;
             InitializeComponent();
         }
 
@@ -39,13 +39,15 @@ namespace WindowsFormsApplication1
         {
             Conexion cn = new Conexion();
 
-            DataTable dtaux = cn.Buscar(idautoridad, "select  idsolicitante, facultad, tipo from solicitante where idsolicitante= '" + idautoridad + "'");
-            DataRow row = dtaux.Rows[0];
-            string x;
-            string tipo = Convert.ToString(row["tipo"]);
-            string facultad = Convert.ToString(row["facultad"]);
-           // MessageBox.Show("  select *from SolicitudReserva where idSolicitante in (select idSolicitante from Solicitante where facultad ='" + facultad + "'");
-            cn.CargarDatos("  select *from SolicitudReserva where estadosolicitud = 'en espera' AND idSolicitante in (select idSolicitante from Solicitante where facultad ='" + facultad + "') ", dataGridView1);
+            DataTable dtaux = cn.Buscar(auxemail, "select idusuario, departamento from usuarios where email= '" + auxemail + "'");
+           DataRow row = dtaux.Rows[0];
+           string x;
+           int idusuario = Convert.ToInt32(row["idusuario"]);
+           string facultad = Convert.ToString(row["departamento"]);
+          // MessageBox.Show("  select *from SolicitudReserva where idSolicitante in (select idSolicitante from Solicitante where facultad ='" + facultad + "'");
+           cn.CargarDatos("  select  nombre, fechasalida, from SolicitudReserva where estadosolicitud = 'en espera' AND idusuario in (select idusuario from usuarios where departamento ='" + facultad + "') ", dataGridView1);
+         //  */
+           // cn.CargarDatos("select * from usuarios", dataGridView1);
         }
     }
 }
