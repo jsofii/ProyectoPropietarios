@@ -50,8 +50,8 @@ namespace WindowsFormsApplication1
             // conect.query("insert into NotificacionRuta values ('rut5','3-jun-2019')");
 
             // Reporte Conductor
-            string [] idreserva = {"hola","mundo"};
-            Application.Run(new Form2("481","AIMACAÑA CHUQUILLA WALTER OSWALDO", idreserva));
+            //string [] idreserva = {"hola","mundo"};
+            //Application.Run(new Form2("481","AIMACAÑA CHUQUILLA WALTER OSWALDO", idreserva));
 
         }
     }
