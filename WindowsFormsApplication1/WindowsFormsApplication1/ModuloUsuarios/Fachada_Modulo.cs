@@ -16,6 +16,9 @@ namespace WindowsFormsApplication1
         Usuario usuario = new Usuario();
         FormDatos frmDatos = new FormDatos();
         mdiModVehiculo frmVehi = new mdiModVehiculo();
+        solicitudesPendientes solicitudes;
+        String aux; 
+
         //FrmReporteHistorialKilometraje frmRep
 
 
@@ -25,6 +28,7 @@ namespace WindowsFormsApplication1
 
             obtenerDatosCargo(user);
             obtenerDatosUsuario(user);
+            aux = user;
 
             FormMenu frm1 = new FormMenu(user);
             privilegiosMenu(frm);
@@ -125,12 +129,18 @@ namespace WindowsFormsApplication1
             if (frmMenú.panelContenedor.Controls.Count > 0)
                 frmMenú.panelContenedor.Controls.RemoveAt(0);
             Form fh = formHijo as Form;
+      
             fh.TopLevel = false;
             fh.FormBorderStyle = FormBorderStyle.None;
             fh.Dock = DockStyle.Fill;
             frmMenú.panelContenedor.Controls.Add(fh);
             frmMenú.panelContenedor.Tag = fh;
             fh.Show();
+        }
+        public void mostrarNotificaciones(FormMenu frmMenu)
+        {
+            solicitudes = new solicitudesPendientes(aux);
+            mostrarMódulo(frmMenu, solicitudes);
         }
 
         public void mostrarDatos(FormMenu frmMenú)
