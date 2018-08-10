@@ -17,6 +17,8 @@ namespace WindowsFormsApplication1
         {
             auxemail = email;
             InitializeComponent();
+            tabPage1.Text = @"Vista pendientes";
+            tabPage2.Text = @"Vista rechazadas";
         }
 
         private void button1_Click(object sender, EventArgs e)
