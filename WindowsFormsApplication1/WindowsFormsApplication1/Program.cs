@@ -18,12 +18,12 @@ namespace WindowsFormsApplication1
         [STAThread]
         static void Main()
         {
-            Correo cor = new Correo();
+            // Correo cor = new Correo();
 
 
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
 
             ////PRUEBAS UNITARIAS
             //Application.Run(new FrmReporteHistorialKilometraje());
@@ -31,8 +31,10 @@ namespace WindowsFormsApplication1
             //simuladorLogin log = new simuladorLogin();
             //log.ShowDialog();
 
+
             //Application.Run(new FormLogin());
-            Application.Run(new FrmSolicitudDeViaje());
+
+
 
 
             //SIMULACION LOGIN
@@ -47,6 +49,10 @@ namespace WindowsFormsApplication1
             //conect.abrir();
             // conect.query("insert into NotificacionRuta values ('rut5','3-jun-2019')");
 
+            // Reporte Conductor  FrmSolicitudDeViaje
+            //string[] idreserva = {"hola","mundo"};
+            //Application.Run(new Form2("481","AIMACAÑA CHUQUILLA WALTER OSWALDO", idreserva));
+            Application.Run(new FrmSolicitudDeViaje());
         }
     }
 }
