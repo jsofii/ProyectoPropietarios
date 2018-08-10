@@ -199,7 +199,6 @@
             // rb_inconvenienteT
             // 
             this.rb_inconvenienteT.AutoSize = true;
-            this.rb_inconvenienteT.Checked = true;
             this.rb_inconvenienteT.Location = new System.Drawing.Point(2, 2);
             this.rb_inconvenienteT.Margin = new System.Windows.Forms.Padding(2);
             this.rb_inconvenienteT.Name = "rb_inconvenienteT";
@@ -218,6 +217,7 @@
             this.rb_inconvenienteF.Name = "rb_inconvenienteF";
             this.rb_inconvenienteF.Size = new System.Drawing.Size(39, 17);
             this.rb_inconvenienteF.TabIndex = 1;
+            this.rb_inconvenienteF.TabStop = true;
             this.rb_inconvenienteF.Text = "No";
             this.rb_inconvenienteF.UseVisualStyleBackColor = true;
             this.rb_inconvenienteF.CheckedChanged += new System.EventHandler(this.rb_inconvenienteF_CheckedChanged);
