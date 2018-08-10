@@ -367,6 +367,8 @@
     <None Include="Resources\icons8-cancelar-40.png" />
     <None Include="Resources\icons8-comprobado-301.png" />
     <None Include="Resources\icons8-cancelar-30.png" />
+    <None Include="Resources\icons8-atención-64.png" />
+    <None Include="Resources\icons8-encuesta-64.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
