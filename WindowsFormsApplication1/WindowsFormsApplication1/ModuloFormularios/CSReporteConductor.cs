@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
 {
     class CSReporteConductor
     {
-        private string idConductor;
+        private string idReservaAprobada;
         private string nombreCompletoConductor;
         private string inconvenientesViaje;
         private string descripcionInconveniente;
@@ -19,9 +19,9 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private Conexion cnx;
         private SqlConnection conn;
 
-        public CSReporteConductor(string idConductor, string nombreCompletoConductor, string inconvenientesViaje, string descripcionInconveniente, float dineroGastadoEnGasolina, string comportamientoPasajeros)
+        public CSReporteConductor(string idReservaAprobada, string nombreCompletoConductor, string inconvenientesViaje, string descripcionInconveniente, float dineroGastadoEnGasolina, string comportamientoPasajeros)
         {
-            this.idConductor = idConductor;
+            this.idReservaAprobada = idReservaAprobada;
             this.nombreCompletoConductor = nombreCompletoConductor;
             this.inconvenientesViaje = inconvenientesViaje;
             this.descripcionInconveniente = descripcionInconveniente;
@@ -33,14 +33,14 @@ namespace WindowsFormsApplication1.ModuloFormularios
             this.cnx = new Conexion();
 
         }
-        public string getIdConductor()
+        public string getIdReservaAprobada()
         {
-            return this.idConductor;
+            return this.idReservaAprobada;
         }
 
-        public void setIdConductor(string idConductor)
+        public void setIdReservaAprobada(string idReservaAprobada)
         {
-            this.idConductor = idConductor;
+            this.idReservaAprobada = idReservaAprobada;
 
         }
 
@@ -105,30 +105,34 @@ namespace WindowsFormsApplication1.ModuloFormularios
         {
             try
             {
+                Console.WriteLine("Conexion");
                 cnx = new Conexion();
+                Console.WriteLine("String conexion");
                 conn = new SqlConnection(cnx.stringConexion);
+                Console.WriteLine("Conexion abrir");
                 conn.Open();
                 String sql = "";
-
-                if (inconvenientesViaje.Equals("null"))
+                MessageBox.Show(descripcionInconveniente);
+                if (descripcionInconveniente.Equals("null"))
                 {
-
-                    sql = "insert into ReporteConductor (idchofer, incoveniente,gasto_combustible,comportamiento_pasajeros) values(" + idConductor + ",null," + dineroGastadoEnGasolina + "," + comportamientoPasajeros + ")";
+                    sql = "insert into Reporte_Conductor (idReservaAprobada, gasto_combustible,comportamiento_pasajeros) values(" + idReservaAprobada + "," + dineroGastadoEnGasolina + "," + comportamientoPasajeros + ")";
                 }
                 else
                 {
-                    sql = "insert into ReporteConductor (idchofer, incoveniente,gasto_combustible,comportamiento_pasajeros) values(" + idConductor + "," + descripcionInconveniente + "," + dineroGastadoEnGasolina + "," + comportamientoPasajeros + ")";
+
+                    sql = "insert into Reporte_Conductor(idReservaAprobada, INCONVENIENTE, GASTO_COMBUSTIBLE, COMPORTAMIENTO_PASAJEROS) VALUES(" + idReservaAprobada + ", '" + descripcionInconveniente + "'," + dineroGastadoEnGasolina + "," + comportamientoPasajeros + ")";
                 }
 
+                MessageBox.Show("" + sql);
                 SqlCommand comando = new SqlCommand(sql, conn);
                 int resultado = comando.ExecuteNonQuery();
-                // Comprobar resultado y mandar mensaje de confirmacion o de reintento
-                MessageBox.Show(resultado + "");
-                MessageBox.Show("" + sql);
+                //Comprobar resultado y mandar mensaje de confirmacion o de reintento
+                MessageBox.Show("REPORTE INGRESADO CORRECTAMENTE");
+
             }
             catch (Exception er)
             {
-                MessageBox.Show("ERROR");
+                MessageBox.Show("ERROR AL INGRESAR EL REPORTE");
                 Console.WriteLine(er.ToString());
             }
         }
