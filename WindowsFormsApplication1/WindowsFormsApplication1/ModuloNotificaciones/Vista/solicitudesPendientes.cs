@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             tabPage1.Text = @"Vista pendientes";
             tabPage2.Text = @"Vista rechazadas";
+            cargarDatosSolicitudes(0, dataGridView1); //por defecto apenas se abra la ventana, se cargaran las que estan en espera
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,19 +46,19 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             Conexion cn = new Conexion();
+            String x = dataGridView1.CurrentCell.Value.ToString();
+            MessageBox.Show(x);
+            DataTable dtaux = cn.Buscar(auxemail, "select idusuario, departamento from usuarios where nombre= '" + x + "'");
+            DataRow row = dtaux.Rows[0];
+            String idusuario = Convert.ToString(row["idusuario"]);
+            DataTable dtaux2 = cn.Buscar(auxemail, "select idsolicitudreserva from solicitudreserva where idusuario='" + idusuario + "'");
+            DataRow row2 = dtaux2.Rows[0];
+            String idreserva = Convert.ToString(row2["idsolicitudreserva"]);
+            autorizacion.rechazar(idreserva);
+
            
-            DataTable dtaux = cn.Buscar(auxemail, "select idusuario, departamento from usuarios where email= '" + auxemail + "'");
-           DataRow row = dtaux.Rows[0];
-           string x;
-           int idusuario = Convert.ToInt32(row["idusuario"]);
-           string facultad = Convert.ToString(row["departamento"]);
-            MessageBox.Show(facultad);
-          
-          // MessageBox.Show("  select *from SolicitudReserva where idSolicitante in (select idSolicitante from Solicitante where facultad ='" + facultad + "'");
-           cn.CargarDatos("   select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND estadosolicitud='en espera' AND departamento ='"+facultad+"'", dataGridView1);
-           // MessageBox.Show("    select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND departamento = ' " + facultad + "'");
-         // cn.CargarDatos("select * from usuarios", dataGridView1);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,7 +66,27 @@ namespace WindowsFormsApplication1
 
         }
 
+
         private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+          //tab page seleccionada
+            if (tabControl1.SelectedIndex == 0)
+            {
+                cargarDatosSolicitudes(0, dataGridView1);//en espera
+               
+            }
+            else if (tabControl1.SelectedIndex == 1)
+            {
+                cargarDatosSolicitudes(1, dataGridView2);//rechazadas
+            }
+            
+    
+        }
+
+
+        //para cargar datos en las datagriewview, int bandera=0 -> en espera, int bandera=1 ->rechazadas
+
+        private void cargarDatosSolicitudes(int bandera, DataGridView dgv)
         {
             Conexion cn = new Conexion();
 
@@ -75,13 +96,19 @@ namespace WindowsFormsApplication1
             int idusuario = Convert.ToInt32(row["idusuario"]);
             string facultad = Convert.ToString(row["departamento"]);
             MessageBox.Show(facultad);
+         
+            if (bandera==0)
+            {
+                cn.CargarDatos("select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND estadosolicitud='en espera' AND departamento ='" + facultad + "'", dgv);
 
-            // MessageBox.Show("  select *from SolicitudReserva where idSolicitante in (select idSolicitante from Solicitante where facultad ='" + facultad + "'");
-            cn.CargarDatos("   select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND estadosolicitud='en espera' AND departamento ='" + facultad + "'", dataGridView1);
-            // MessageBox.Show("    select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND departamento = ' " + facultad + "'");
-            // cn.CargarDatos("select * from usuarios", dataGridView1);
+            }
+            else if (bandera == 1)
+            {
+                cn.CargarDatos("select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND estadosolicitud='rechazada' AND departamento ='" + facultad + "'", dgv);
+            }
         }
-    }
+
+     }
 }
 
 
