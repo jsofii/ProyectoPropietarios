@@ -60,8 +60,8 @@ namespace ModuloFormularios
                 {
                     reporteConductor.setComportamientoPasajeros("100");
                 }
-                reporteConductor.setIdConductor(txt_ciConductor.Text);
-                reporteConductor.guardarEnBase();
+                //reporteConductor.setIdConductor(txt_ciConductor.Text);
+                //reporteConductor.guardarEnBase();
             }
             catch (Exception er)
             {

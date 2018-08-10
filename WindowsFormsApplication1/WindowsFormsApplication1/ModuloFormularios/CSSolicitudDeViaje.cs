@@ -25,9 +25,9 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private Conexion cnx = new Conexion();
         private SqlConnection conn;
 
-
         public CSSolicitudDeViaje(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo)
         {
+            conn = new SqlConnection(cnx.stringConexion);
             this.correoInstitucional = correoInstitucional;
             this.nombreCompletoSolicitante = nombreCompletoSolicitante;
             this.destino = destino;
@@ -37,6 +37,10 @@ namespace WindowsFormsApplication1.ModuloFormularios
             this.horaRetorno = horaRetorno;
             this.motivo = motivo;
             this.numeroPersonas = numeroPersonas;
+        }
+
+        public CSSolicitudDeViaje() {
+            conn = new SqlConnection(cnx.stringConexion);
         }
 
         public int getNumeroPersonas()
@@ -143,6 +147,33 @@ namespace WindowsFormsApplication1.ModuloFormularios
             this.idUsuario = idUsuario;
             this.idLugar = idLugar;
         }
+
+        public void setAtributos(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo) {
+            this.correoInstitucional = correoInstitucional;
+            this.nombreCompletoSolicitante = nombreCompletoSolicitante;
+            this.destino = destino;
+            this.fechaSalida = fechaSalida;
+            this.horaSalida = horaSalida;
+            this.fechaRetorno = fechaRetorno;
+            this.horaRetorno = horaRetorno;
+            this.motivo = motivo;
+            this.numeroPersonas = numeroPersonas;
+        }
+
+        public void actualizarLugares(ComboBox destino) {
+            SqlDataReader reader = null;
+            conn.Open();
+        }
+
+        public void llenarCorreo(TextBox correobox)
+        {
+            correobox.Text = this.correoInstitucional;
+        }
+
+        public void llenarNombre(TextBox nombrebox) {
+            nombrebox.Text = this.nombreCompletoSolicitante;
+        }
+
 
         public void guardarEnBase() {
 

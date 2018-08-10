@@ -31,10 +31,8 @@ namespace WindowsFormsApplication1
             //simuladorLogin log = new simuladorLogin();
             //log.ShowDialog();
 
-
-            Application.Run(new FormLogin());
-
-
+            //Application.Run(new FormLogin());
+            Application.Run(new FrmSolicitudDeViaje());
 
 
             //SIMULACION LOGIN

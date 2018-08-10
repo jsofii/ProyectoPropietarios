@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
 {
     class CSCalificacionDeServicio
     {
-
+        private string idCalificacionServicio;
         private string idReserva;
         private string puntualSalida;
         private string limpiezaVehiculo;
