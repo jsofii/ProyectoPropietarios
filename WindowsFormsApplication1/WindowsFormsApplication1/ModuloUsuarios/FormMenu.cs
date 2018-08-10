@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using WindowsFormsApplication1.ModuloFormularios;
 
 namespace WindowsFormsApplication1
 
@@ -178,6 +178,8 @@ namespace WindowsFormsApplication1
 
         private void btnReservas_Click(object sender, EventArgs e)
         {
+            //crear usuario y enviar xfavor
+            //FachadaFormularios fch_formulario = new FachadaFormularios(this, usuario);
 
         }
 

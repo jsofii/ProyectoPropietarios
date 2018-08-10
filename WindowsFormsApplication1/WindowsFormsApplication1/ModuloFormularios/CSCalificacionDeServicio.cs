@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
 
         public CSCalificacionDeServicio(string idCalificacionServicio, string idReserva, string puntualSalida, string limpiezaVehiculo, string puntualAlDestino, string puntualAlRetorno, string comentariosAdicionales)
         {
-            this.idCalificacionServicio = idCalificacionServicio;
+            //this.idCalificacionServicio = idCalificacionServicio;
             this.idReserva = idReserva;
             this.puntualSalida = puntualSalida;
             this.limpiezaVehiculo = limpiezaVehiculo;

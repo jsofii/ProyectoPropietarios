@@ -18,12 +18,12 @@ namespace WindowsFormsApplication1
         [STAThread]
         static void Main()
         {
-            Correo cor = new Correo();
+           // Correo cor = new Correo();
 
 
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
 
             ////PRUEBAS UNITARIAS
             //Application.Run(new FrmReporteHistorialKilometraje());
@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
             //log.ShowDialog();
 
 
-            Application.Run(new ModuloFormularios.FrmPrincipalChofer());
+            //Application.Run(new FormLogin());
 
 
 
@@ -48,6 +48,10 @@ namespace WindowsFormsApplication1
             // conect.query("insert into NotificacionRuta values ('rut2','2-jun-2019');");
             //conect.abrir();
             // conect.query("insert into NotificacionRuta values ('rut5','3-jun-2019')");
+
+            // Reporte Conductor
+            //string [] idreserva = {"hola","mundo"};
+            //Application.Run(new Form2("481","AIMACAÑA CHUQUILLA WALTER OSWALDO", idreserva));
 
         }
     }
