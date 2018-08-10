@@ -79,6 +79,7 @@
     <Compile Include="ModuloFormularios\CSListaSolicitudDeViaje.cs" />
     <Compile Include="ModuloFormularios\CSReporteConductor.cs" />
     <Compile Include="ModuloFormularios\CSSolicitudDeViaje.cs" />
+    <Compile Include="ModuloFormularios\FachadaFormularios.cs" />
     <Compile Include="ModuloFormularios\FrmSolicitudDeViaje.cs">
       <SubType>Form</SubType>
     </Compile>
