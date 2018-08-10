@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1
     public partial class solicitudesPendientes : Form
     {
         string auxemail;
+        Autorizacion autorizacion = new Autorizacion();
         public solicitudesPendientes(string email)
         {
             auxemail = email;
@@ -32,33 +33,8 @@ namespace WindowsFormsApplication1
              DataTable dtaux2 = cn.Buscar(auxemail, "select idsolicitudreserva from solicitudreserva where idusuario='" + idusuario + "'");
              DataRow row2 = dtaux2.Rows[0];
              String idreserva = Convert.ToString(row2["idsolicitudreserva"]);
-            Conexion conect = new Conexion();
-            conect.query(" update solicitudreserva set estadosolicitud='aprobada1' where idsolicitudreserva="+idreserva+";");
-            /*try
-            {
-               
-            Conexion cn = new Conexion();
-         
-
-            DataTable dtaux = cn.Buscar(auxemail, "select idusuario, departamento from usuarios where nombre= '" + x + "'");
-            DataRow row = dtaux.Rows[0];
-         
-            String idusuario = Convert.ToString(row["idusuario"]);
-            DataTable dtaux2 = cn.Buscar(auxemail, "select idsolicitudreserva from solicitudreserva where idusuario='" + idusuario + "'");
-            DataRow row2= dtaux2.Rows[0];
-            String idreserva = Convert.ToString(row2["idsolicitudreserva"]);
-           
-           
-            
-                MessageBox.Show("voy a hacer la consulta");
-                
-                cn.query("update solicitudreserva set estadosolicitud='aprobada1' where idsolicitudreserva=1");
-            }
-            catch
-            {
-                MessageBox.Show("CAMPO SELECCIANO NO ESTA CORRECTO");
-            }
-            */
+            autorizacion.autorizar(idreserva);
+    
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
