@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
 {
     class CSCalificacionDeServicio
     {
-        private string idCalificacionServicio;
+
         private string idReserva;
         private string puntualSalida;
         private string limpiezaVehiculo;
@@ -21,10 +21,8 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private SqlConnection conn;
         
 
-        public CSCalificacionDeServicio(string idCalificacionServicio, string idReserva, string puntualSalida, string limpiezaVehiculo, string puntualAlDestino, string puntualAlRetorno, string comentariosAdicionales)
+        public CSCalificacionDeServicio(string idReserva,string puntualSalida, string limpiezaVehiculo, string puntualAlDestino, string puntualAlRetorno, string comentariosAdicionales)
         {
-            cnx = new Conexion();
-            this.idCalificacionServicio = idCalificacionServicio;
             this.idReserva = idReserva;
             this.puntualSalida = puntualSalida;
             this.limpiezaVehiculo = limpiezaVehiculo;
@@ -34,7 +32,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
         }
         public CSCalificacionDeServicio() {
             cnx = new Conexion();
-        }
+                    }
 
         public string getIdReserva()
         {
@@ -44,7 +42,9 @@ namespace WindowsFormsApplication1.ModuloFormularios
         public void setIdReserva(string idReserva)
         {
             this.idReserva=idReserva;
+
         }
+
 
         public string getPuntualSalida()
         {
@@ -56,6 +56,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
             this.puntualSalida = puntualSalida;
 
         }
+
         public string getLimpiezaVehiculo()
         {
             return this.limpiezaVehiculo;

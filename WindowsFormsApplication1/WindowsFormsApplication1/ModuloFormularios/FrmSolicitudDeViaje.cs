@@ -10,32 +10,112 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
-using WindowsFormsApplication1.ModuloFormularios;
+
 
 namespace ModuloFormularios
 {
     public partial class FrmSolicitudDeViaje : Form
     {
-        private CSSolicitudDeViaje solicitudDeViaje = new CSSolicitudDeViaje();
+        private Conexion cnx = new Conexion();
+        private SqlConnection conn;
+        private ArrayList idDestino = new ArrayList();
         public FrmSolicitudDeViaje()
         {
             InitializeComponent();
-            //Llena el Form
-            solicitudDeViaje.llenarCorreo(txt_ciSolicitante);
-            solicitudDeViaje.llenarCorreo(txt_nombreSolicitante);
-            solicitudDeViaje.llenarMotivos(comboBoxMotivos);
+            SqlDataReader reader = null;
+            conn = new SqlConnection(cnx.stringConexion);
+            try
+            {
+                conn.Open();
+                SqlCommand comando = new SqlCommand("SELECT idLugar, nombreLugar FROM dbo.Lugar", conn);
+                reader = comando.ExecuteReader();
+                comboBoxDestinos.DisplayMember = "Text";
+                comboBoxDestinos.ValueMember = "Value";
+                while (reader.Read())
+                {
+                    comboBoxDestinos.Items.Add(new { Text = reader[1], Value = reader[0] });
+                    
+                }
+                comboBoxDestinos.SelectedIndex = 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            conn = new SqlConnection(cnx.stringConexion);
+            try
+            {
+                conn.Open();
+                SqlCommand comando = new SqlCommand("SELECT idMotivoViaje, descripcion FROM dbo.MotivoViaje", conn);
+                reader = comando.ExecuteReader();
+                comboBoxMotivos.DisplayMember = "Text";
+                comboBoxMotivos.ValueMember = "Value";
+                while (reader.Read())
+                {
+                    comboBoxMotivos.Items.Add(new { Text = reader[1], Value = reader[0] });
+
+                }
+                comboBoxMotivos.SelectedIndex = 0;
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
         }
         
-        private void buttonGuardar_Click_1(object sender, EventArgs e)
+        
+        
+        private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            solicitudDeViaje.setFechaRetorno(dtf_llegada.Text);
-            solicitudDeViaje.setHoraRetorno(dth_llegada.Text);
-            solicitudDeViaje.setFechaSalida(dtf_salida.Text);
-            solicitudDeViaje.setHoraSalida(dth_salida.Text);
-            solicitudDeViaje.setDestino(txt_Destino.Text+","+comboBoxProvincias.SelectedItem.ToString()+",Ecuador");
-            solicitudDeViaje.setIDs(comboBoxMotivos.SelectedIndex+1,1);//aqui se debe pasar el idUsuario
-            solicitudDeViaje.setNumeroPersonas(Convert.ToInt32(txtNumPersona.Text));
-            solicitudDeViaje.guardarEnBase();
+
+            //public CSSolicitudDeViaje( , string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo)
+            //CSSolicitudDeViaje cssolicitud = new CSSolicitudDeViaje(txt_ciSolicitante.Text, txt_nombreSolicitante, comboBoxDestinos.se);
+
+            //idMotivoViaje,idCategoriaUsuario,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
+            //        "values(" + (comboBoxMotivos.SelectedIndex + 1) + "," + 1 + "," + idSol + "," + (comboBoxMotivos.SelectedIndex + 1) + "," + 3 + ",'" +
+            //        dtf_salida.Text + " " + dth_salida.Text + "','" + dtf_llegada.Text + " " + dth_llegada.Text + "','en espera','" + thisDay.ToString() +
+
+            //String idSol = "";
+            //DateTime thisDay = DateTime.Today;
+            //try
+            //{
+            //    cnx = new Conexion();
+            //    conn = new SqlConnection(cnx.stringConexion);
+            //    SqlDataReader reader = null;
+            //    String sql = "select idSolicitante from Solicitante where nombreSolicitante='" + txt_nombreSolicitante.Text + "'";
+            //    conn.Open();
+            //    SqlCommand comando = new SqlCommand(sql, conn);
+            //    reader = comando.ExecuteReader();
+            //    while (reader.Read())
+            //    {
+            //        idSol = "" + reader[0];
+            //    }
+            //    conn.Close();
+            //}
+            //catch (Exception er)
+            //{
+            //    MessageBox.Show("Error");
+            //    Console.WriteLine(er.ToString());
+            //}
+            //try
+            //{
+            //    cnx = new Conexion();
+            //    conn = new SqlConnection(cnx.stringConexion);
+            //    conn.Open();
+            //    String sql = "insert into SolicitudReserva(idMotivoViaje,idCategoriaUsuario,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
+            //        "values(" + (comboBoxMotivos.SelectedIndex + 1) + "," + 1 + "," + idSol + "," + (comboBoxMotivos.SelectedIndex + 1) + "," + 3 + ",'" +
+            //        dtf_salida.Text + " " + dth_salida.Text + "','" + dtf_llegada.Text + " " + dth_llegada.Text + "','en espera','" + thisDay.ToString() + "')";
+            //    SqlCommand comando = new SqlCommand(sql, conn);
+            //    int resultado = comando.ExecuteNonQuery();
+            //    MessageBox.Show("" + sql);
+            //}
+            //catch (Exception er)
+            //{
+            //    MessageBox.Show("Error");
+            //    Console.WriteLine(er.ToString());
+            //}
         }
     }
 }

@@ -10,9 +10,8 @@
 
 namespace WindowsFormsApplication1.Properties {
     using System;
-    using System.Drawing;
-
-
+    
+    
     /// <summary>
     ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     /// </summary>
@@ -24,9 +23,7 @@ namespace WindowsFormsApplication1.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        internal static Image clipboard;
-        internal static Image tasks;
-        internal static Image clipboard_1_;
+        
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;

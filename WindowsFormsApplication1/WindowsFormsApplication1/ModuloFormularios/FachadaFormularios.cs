@@ -10,10 +10,23 @@ namespace WindowsFormsApplication1.ModuloFormularios
     class FachadaFormularios
     {
         
-        //Formulario Caro
+       // private FrmPrincipalFormularioProfesor frmPrincipalProfesor;
+        //private FrmPrincipalChofer frmPrincipalChofer;
         public FachadaFormularios(FormMenu frmMenu, Usuario usuario) {
-        //mostrarModulo(frmMenu, formularioCaro(usuario));
+            validar(frmMenu, usuario.IDcargo1);
 
+        }
+
+        private void validar(FormMenu frmMenu, int id) {
+            if (id == 5)
+            {
+                //  mostrarModulo(frmMenu, frmPrincipalChofer);
+            }
+            else
+            {
+            
+            //mostrarModulo(frmMenu, frmPrincipalProfesor);
+            }
         }
 
         public void mostrarModulo(FormMenu frmMenu, object formHijo)

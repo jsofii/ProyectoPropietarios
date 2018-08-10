@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
             //log.ShowDialog();
 
 
-           Application.Run(new FrmSolicitudDeViaje());
+           Application.Run(new FormLogin());
 
 
 
