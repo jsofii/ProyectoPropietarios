@@ -34,7 +34,8 @@ namespace WindowsFormsApplication1
              DataTable dtaux2 = cn.Buscar(auxemail, "select idsolicitudreserva from solicitudreserva where idusuario='" + idusuario + "'");
              DataRow row2 = dtaux2.Rows[0];
              String idreserva = Convert.ToString(row2["idsolicitudreserva"]);
-            autorizacion.autorizar(idreserva);
+             autorizacion.autorizar(idreserva);
+          
     
         }
 
