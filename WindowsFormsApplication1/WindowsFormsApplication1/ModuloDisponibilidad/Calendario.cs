@@ -14,6 +14,13 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 {
     public partial class Calendario : Form
     {
+
+        //String aConsultar ="Select V.TIPOVEHICULO AS \"TIPO DE VEHICULO\", V.PLACAVEHICULO AS \"PLACA\", CH.NOMBRECHOFER+CH.APELLIDOCHOFER AS \"NOMBRES DEL CHOFER\", FECHASALIDA AS \"FECHA DE SALIDA\", FECHARETORNO AS \"FECHA DE REGRESO\" From RESERVAAPROBADA RA, CHOFER CH, VEHICULO V where CH.IDCHOFER = RA.IDCHOFER AND V.IDVEHICULO = RA.IDVEHICULO";
+        String aConsultar = "Select IDCHOFER AS \"CHOFER\", IDVEHICULO AS \"VEHICULO\", FECHASALIDA AS \"FECHA DE SALIDA\", FECHARETORNO AS \"FECHA DE RETORNO\", ESTADOSOLICITUD AS \"ESTADO DE LA SOLICITUD\"  from RESERVAAPROBADA";//para pasar los datos al data grid view
+
+        String fechasConsultadas = "select FECHASALIDA as f_i, FECHARETORNO as f_f FROM RESERVAAPROBADA";
+
+
         public Calendario()
         {
             InitializeComponent();
@@ -23,12 +30,32 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
             this.StartPosition = FormStartPosition.CenterScreen;
             label1.Font = new System.Drawing.Font(label1.Font, FontStyle.Bold);
             // tableLayoutPanel1.MaximumSize = new Size(tableLayoutPanel1.Width, tableLayoutPanel1.Height);
+            
             tableLayoutPanel1.AutoScroll = true;
+        }
+        public Calendario(int tipo) {
+            if (tipo == 1) {
+                this.aConsultar ="Select IDCHOFER AS \"CHOFERRR\", IDVEHICULO AS \"VEHICULO\", FECHASALIDA AS \"FECHA DE SALIDA\", FECHARETORNO AS \"FECHA DE RETORNO\", ESTADOSOLICITUD AS \"ESTADO DE LA SOLICITUD\"  from RESERVAAPROBADA";//para pasar los datos al data grid view
+
+
+            }
+            InitializeComponent();
+            // this.BackColor = Color.Black;
+            int dis_a = 0;
+            this.Size = new Size(1100, 800);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            label1.Font = new System.Drawing.Font(label1.Font, FontStyle.Bold);
+            // tableLayoutPanel1.MaximumSize = new Size(tableLayoutPanel1.Width, tableLayoutPanel1.Height);
+            monthCalendar1.TitleBackColor = Color.Blue;
+            monthCalendar1.TrailingForeColor = Color.Red;
+            monthCalendar1.TitleForeColor = Color.Yellow;
+            tableLayoutPanel1.AutoScroll = true;
+
         }
 
         private void Calendario_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,13 +70,14 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            
             tableLayoutPanel1.BackColor = Color.White;
             despintar();
             DateTime a = primerDiaSemana(monthCalendar1);
             llenarDias(a);
-            textBox2.Text = "primer dia " + a;
+            //textBox2.Text = "primer dia " + a;
 
-            textBox1.Text = "Semana del:" + monthCalendar1.SelectionRange.Start;
+            //textBox1.Text = "Semana del:" + monthCalendar1.SelectionRange.Start;
             consultarReserva();
 
             //pruebas de manejo de la fecha
@@ -97,7 +125,7 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Text = "Date Selected :" + (int)monthCalendar1.SelectionRange.Start.DayOfWeek;
+            //textBox1.Text = "Date Selected :" + (int)monthCalendar1.SelectionRange.Start.DayOfWeek;
             /*  monthCalendar1.SelectionStart.Date.AddDays(1 - (monthCalendar1.SelectionStart.Date.DayOfWeek));
               'Último día de la semana
                MonthCalendar.SelectionStart.Date.AddDays(7 - (MonthCalendar.SelectionStart.Date.DayOfWeek))*/
@@ -105,14 +133,12 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
         private void autosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            autosToolStripMenuItem.BackColor = Color.Blue;
-            busesToolStripMenuItem.BackColor = this.BackColor;
+           
         }
 
         private void busesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            busesToolStripMenuItem.BackColor = Color.Blue;
-            autosToolStripMenuItem.BackColor = this.BackColor;
+            
         }
 
 
@@ -153,17 +179,15 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
         public void consultarReserva()
         {
-            //String aConsultar ="Select V.TIPOVEHICULO AS \"TIPO DE VEHICULO\", V.PLACAVEHICULO AS \"PLACA\", CH.NOMBRECHOFER+CH.APELLIDOCHOFER AS \"NOMBRES DEL CHOFER\", FECHASALIDA AS \"FECHA DE SALIDA\", FECHARETORNO AS \"FECHA DE REGRESO\" From RESERVAAPROBADA RA, CHOFER CH, VEHICULO V where CH.IDCHOFER = RA.IDCHOFER AND V.IDVEHICULO = RA.IDVEHICULO";
-            String aConsultar = "Select IDCHOFER AS \"CHOFER\", IDVEHICULO AS \"VEHICULO\", FECHASALIDA AS \"FECHA DE SALIDA\", FECHARETORNO AS \"FECHA DE RETORNO\", ESTADOSOLICITUD AS \"ESTADO DE LA SOLICITUD\"  from RESERVAAPROBADA";//para pasar los datos al data grid view
-
-            String fechasConsultadas = "select FECHASALIDA as f_i, FECHARETORNO as f_f FROM RESERVAAPROBADA";
-
+            
             Consulta consulta = new Consulta();
 
             consulta.cargarDatos(aConsultar, dataGridView1);
             DataTable fechas = consulta.tablaConsulta(fechasConsultadas);
-           // DataTable fueraDeRango = new DataTable();
-           // fueraDeRango.Columns[0] = "f_i";
+           DataTable fueraDeRango = new DataTable();
+           fueraDeRango.Columns.Add("f_i",typeof(DateTime));
+           fueraDeRango.Columns.Add("f_f", typeof(DateTime));
+
             DateTime f_i = new DateTime();
             DateTime f_f = new DateTime();
 
@@ -171,9 +195,9 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
             {
                 f_i = Convert.ToDateTime(fechas.Rows[i]["f_i"]);
                 f_f = Convert.ToDateTime(fechas.Rows[i]["f_f"]);
-               // FueraDeRango(f_i, f_f,);
+              FueraDeRango(f_i, f_f,fueraDeRango);
                 pintar(f_i, f_f);
-               // pintarFechasFueraDeRango();
+               pintarFechasFueraDeRango(fueraDeRango );
                
             }
 
@@ -204,8 +228,6 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
                     row["f_f"] = f_f;
                     fueraDeRangos.Rows.Add(row);
-
-
                 }
 
 
@@ -215,7 +237,23 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
 
         }
-        public void pintarFechasFueraDeRango() {
+        public void pintarFechasFueraDeRango(DataTable fueraDeRango) {
+            DateTime aux=primerDiaSemana(monthCalendar1);
+
+           
+                for (int j = 0; j<=6;++j) {
+                for (int i = 0; i < fueraDeRango.Rows.Count;i++) {
+                    if (RangoFecha(Convert.ToDateTime(fueraDeRango.Rows[i]["f_i"]), Convert.ToDateTime(fueraDeRango.Rows[i]["f_f"]), aux)) {
+                        pintar(Convert.ToDateTime(fueraDeRango.Rows[i]["f_i"]), Convert.ToDateTime(fueraDeRango.Rows[i]["f_f"]));
+
+                    }
+                }
+                aux.AddDays(j);
+                }
+
+            
+
+           
 
 
         }
@@ -225,34 +263,15 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
             int h_i = Convert.ToInt32(f_i.Hour);
             int h_f = Convert.ToInt32(f_f.Hour);
-            textBox4.Text = Convert.ToString(f_i) + f_f;
-            /*
-             if (f_i.Date == f_f.Date)
-                {//valida si la fecha de inicio es = a la de fin
-                    for (int i = 0; i <= 6; i++)
-                    {//contador para que auxiliar aumente
-                        if (aux.AddDays(i) == f_i.Date)
-                        {//valida que auxiliar sea igual a las fechas de inicio y fin(xq las dos son iguales)
-                            textBox5.Text = "Si es igual zorreins ";
-                            for (int j = h_i; j < h_f; j++)
-                            {
-                                tableLayoutPanel1.GetControlFromPosition(7, j - 7).BackColor = Color.Orange;
-                            }
-                        }
-                        else if (aux.AddDays(i) == f_i && aux.AddDays(i) < f_f)
-                        {//valida que la fecha de inicio sea menor que la final
-
-                        }
-                    }
-                }
-             */
+            //textBox4.Text = Convert.ToString(f_i) + f_f;
+            
                 if (f_i.Date == f_f.Date)
                 {//valida si la fecha de inicio es = a la de fin
                     for (int i = 0; i <= 6; i++)
                     {//contador para que auxiliar aumente
                         if (aux.AddDays(i) == f_i.Date)
                         {//valida que auxiliar sea igual a las fechas de inicio y fin(xq las dos son iguales)
-                            textBox5.Text = "Si es igual y estoy en la otra parte zorro";
+                            //textBox5.Text = "Si es igual y estoy en la otra parte zorro";
                             for (int j = h_i; j < h_f; j++)
                             {
                                 tableLayoutPanel1.GetControlFromPosition(i + 1, j+1).BackColor = Color.Orange;
@@ -265,14 +284,17 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
                     }
                 }
             else if (f_i.Date < f_f.Date){
-                for (int i = 0; i <= 6; i++) {
-                    if (RangoFecha(f_i.Date, f_f.Date, aux.AddDays(i))&& aux.AddDays(i)==f_i.Date) {
-                        for (int j = h_i; j < 24; j++) {
+                for (int i = 0; i <= 6; i++)
+                {
+                    if (RangoFecha(f_i.Date, f_f.Date, aux.AddDays(i)) && aux.AddDays(i) == f_i.Date)
+                    {
+                        for (int j = h_i; j < 24; j++)
+                        {
                             tableLayoutPanel1.GetControlFromPosition(i + 1, j + 1).BackColor = Color.Orange;
                         }
-                        
+
                     }
-                    if (RangoFecha(f_i.Date, f_f.Date, aux.AddDays(i))&& aux.AddDays(i) != f_i.Date && aux.AddDays(i) != f_f.Date)
+                    else if (RangoFecha(f_i.Date, f_f.Date, aux.AddDays(i)) && aux.AddDays(i) != f_i.Date && aux.AddDays(i) != f_f.Date)
                     {
                         for (int j = 0; j < 24; j++)
                         {
@@ -280,7 +302,8 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
                         }
 
                     }
-                    if (RangoFecha(f_i.Date, f_f.Date, aux.AddDays(i)) && aux.AddDays(i) == f_f.Date)
+                
+                    else if (RangoFecha(f_i.Date, f_f.Date, aux.AddDays(i)) && aux.AddDays(i) == f_f.Date)
                     {
                         for (int j = 0; j < h_f; j++)
                         {
@@ -341,7 +364,7 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
 
         public void despintar() {
             for (int i = 1; i <= 7; i++) {
-                for (int j = 1; j < 17; j++) {
+                for (int j = 1; j <= 24; j++) {
                     tableLayoutPanel1.GetControlFromPosition(i, j).BackColor = Color.LimeGreen;
                 }
 
@@ -1028,6 +1051,12 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
         private void label2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Calendario a = new Calendario();
+            a.Show();
         }
     }
 }
