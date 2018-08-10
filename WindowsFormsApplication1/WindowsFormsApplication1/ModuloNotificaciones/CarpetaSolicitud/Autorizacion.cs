@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-
+using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 
@@ -42,6 +42,19 @@ namespace WindowsFormsApplication1
   
             Conexion conect = new Conexion();
             conect.query(" update solicitudreserva set estadosolicitud='aprobada1' where idsolicitudreserva=" + reserva + ";");
+            Conexion cn = new Conexion();
+           
+            DataTable dtaux = cn.Buscar("", "select idusuario from solicitudreserva where idsolicitudreserva= '" + reserva + "'");
+            DataRow row = dtaux.Rows[0];
+            String idusuario = Convert.ToString(row["idusuario"]);
+
+            DataTable dtaux2 = cn.Buscar("", "select email, nombre from usuarios where idusuario= '" + idusuario + "'");
+            DataRow row2 = dtaux2.Rows[0];
+            String email = Convert.ToString(row2["email"]);
+            String nombre = Convert.ToString(row2["nombre"]);
+            MessageBox.Show("mi email del solicitante es" + email);
+            NotificacionUsuario notificacion = new NotificacionUsuario();
+            notificacion.NotificacionSolicitudAprobada(email, "SOLICITANTE:" + nombre + "SU SOLICITUD HA SIDO APROBADA");
 
         }
         public void rechazar (String reserva)
