@@ -11,6 +11,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
     class CSReporteConductor
     {
         private string idReservaAprobada;
+        private string idConductor;
         private string nombreCompletoConductor;
         private string inconvenientesViaje;
         private string descripcionInconveniente;
@@ -41,6 +42,16 @@ namespace WindowsFormsApplication1.ModuloFormularios
         public void setIdReservaAprobada(string idReservaAprobada)
         {
             this.idReservaAprobada = idReservaAprobada;
+
+        }
+        public string getIdConductor()
+        {
+            return this.idConductor;
+        }
+
+        public void setIdConductor(string idConductor)
+        {
+            this.idConductor= idConductor;
 
         }
 
