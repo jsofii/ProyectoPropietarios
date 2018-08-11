@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1.ModuloFormularios;
 
-namespace ModuloFormularios
+namespace WindowsFormsApplication1.ModuloFormularios
 {
     public partial class FrmCalificacionServicio : Form
     {
@@ -56,6 +56,26 @@ namespace ModuloFormularios
             {
                 calificacionServicio.setComentariosAdicionales(txt_comenAdicionales.Text);
             }
+        }
+
+        private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private string puntualAlDestino;
         private string puntualAlRetorno;
         private string comentariosAdicionales;
-        private string idCalificacionServicio;
+   
         private Conexion cnx;
         private SqlConnection conn;
         

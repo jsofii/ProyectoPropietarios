@@ -1,6 +1,4 @@
-﻿using ModuloFormularios;
-
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +16,7 @@ namespace WindowsFormsApplication1
         [STAThread]
         static void Main()
         {
-           // Correo cor = new Correo();
+            // Correo cor = new Correo();
 
 
 
@@ -31,10 +29,10 @@ namespace WindowsFormsApplication1
             //simuladorLogin log = new simuladorLogin();
             //log.ShowDialog();
 
+            //String[] caro = { "jajaja", "jujuju" };
+          //  Application.Run(new ModuloFormularios.FrmReporteConductor("099900","juan Perez",caro));
 
-            //Application.Run(new FormLogin());
-
-
+            Application.Run(new ModuloFormularios.FrmCalificacionServicio());
 
 
             //SIMULACION LOGIN

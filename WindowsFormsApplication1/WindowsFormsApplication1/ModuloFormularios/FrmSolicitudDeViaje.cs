@@ -9,10 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApplication1;
-using WindowsFormsApplication1.ModuloFormularios;
 
-namespace ModuloFormularios
+namespace WindowsFormsApplication1.ModuloFormularios
 {
     public partial class FrmSolicitudDeViaje : Form
     {

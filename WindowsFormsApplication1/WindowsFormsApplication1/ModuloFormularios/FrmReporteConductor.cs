@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApplication1.ModuloFormularios;
 
-namespace ModuloFormularios
+namespace WindowsFormsApplication1.ModuloFormularios
 {
-    public partial class Form2: Form
+    public partial class FrmReporteConductor: Form
     {
         private CSReporteConductor reporteConductor;
         
-        public Form2(string cedulaConductor, string nombresConductor, string [] reservas)
+        public FrmReporteConductor(string cedulaConductor, string nombresConductor, string [] reservas)
         {
             InitializeComponent();
             crearCombo(reservas);
@@ -97,6 +96,27 @@ namespace ModuloFormularios
         private void rb_inconvenienteT_CheckedChanged(object sender, EventArgs e)
         {
             txt_descIncon.Enabled = true;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
         }
     }
  }
