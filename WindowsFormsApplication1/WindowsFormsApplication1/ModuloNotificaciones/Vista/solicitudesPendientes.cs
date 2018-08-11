@@ -50,7 +50,7 @@ namespace WindowsFormsApplication1
 
             Conexion cn = new Conexion();
             String x = dataGridView1.CurrentCell.Value.ToString();
-            MessageBox.Show(x);
+           // MessageBox.Show(x);
             DataTable dtaux = cn.Buscar(auxemail, "select idusuario, departamento from usuarios where nombre= '" + x + "'");
             DataRow row = dtaux.Rows[0];
             String idusuario = Convert.ToString(row["idusuario"]);
