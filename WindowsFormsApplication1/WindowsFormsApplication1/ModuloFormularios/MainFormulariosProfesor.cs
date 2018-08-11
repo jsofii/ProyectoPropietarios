@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1.ModuloFormularios
 {
-    public partial class MainFormularios : Form
+    public partial class MainFormulariosProfesor : Form
     {
         string nombresConductor;
         string idConductor;
         private Form2 frmReporteConductor;
-        public MainFormularios(string nombresConductor, string idConductor,string idCargo)
+        public MainFormulariosProfesor(string nombresConductor, string idConductor,string idCargo)
         {
             InitializeComponent();
             validar(idCargo);
