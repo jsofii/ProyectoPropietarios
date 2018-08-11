@@ -1519,9 +1519,6 @@ C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\Windo
 C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.config
 C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ModuloFormularios.FrmCalificacionServicio.resources
-C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ModuloFormularios.FrmMensajeError.resources
-C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ModuloFormularios.FrmPrincipalChofer.resources
-C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ModuloFormularios.FrmPrincipalFormularioProfesor.resources
 C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ModuloFormularios.Form2.resources
 C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ModuloFormularios.FrmSolicitudDeViaje.resources
 C:\Users\sofi-\Source\Repos\ProyectoPropietarios4\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.solicitudesPendientes.resources
