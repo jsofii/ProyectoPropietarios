@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1.ModuloFormularios
 {
-    partial class MainFormulariosProfesor
+    partial class MainFormularioProfesor
     {
         /// <summary>
         /// Required designer variable.

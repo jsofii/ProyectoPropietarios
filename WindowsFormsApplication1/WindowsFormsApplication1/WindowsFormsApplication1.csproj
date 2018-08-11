@@ -91,11 +91,11 @@
     <Compile Include="ModuloFormularios\MainFormularioConductor.Designer.cs">
       <DependentUpon>MainFormularioConductor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModuloFormularios\MainFormulariosProfesor.cs">
+    <Compile Include="ModuloFormularios\MainFormularioProfesor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModuloFormularios\MainFormulariosProfesor.Designer.cs">
-      <DependentUpon>MainFormulariosProfesor.cs</DependentUpon>
+    <Compile Include="ModuloFormularios\MainFormularioProfesor.Designer.cs">
+      <DependentUpon>MainFormularioProfesor.cs</DependentUpon>
     </Compile>
     <Compile Include="ModuloFormularios\Notificacion.cs" />
     <Compile Include="ModuloNotificaciones\CarpetaNotificaciones\NotificacionMantenimiento.cs" />
@@ -272,8 +272,8 @@
     <EmbeddedResource Include="ModuloFormularios\MainFormularioConductor.resx">
       <DependentUpon>MainFormularioConductor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModuloFormularios\MainFormulariosProfesor.resx">
-      <DependentUpon>MainFormulariosProfesor.cs</DependentUpon>
+    <EmbeddedResource Include="ModuloFormularios\MainFormularioProfesor.resx">
+      <DependentUpon>MainFormularioProfesor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloNotificaciones\Vista\solicitudesPendientes.resx">
       <DependentUpon>solicitudesPendientes.cs</DependentUpon>
