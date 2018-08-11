@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             tabPage1.Text = @"Vista pendientes";
             tabPage2.Text = @"Vista rechazadas";
+            tabPage3.Text = @"Vista aprobadas";
             cargarDatosSolicitudes(0, dataGridView1); //por defecto apenas se abra la ventana, se cargaran las que estan en espera
         }
 
@@ -80,8 +81,12 @@ namespace WindowsFormsApplication1
             {
                 cargarDatosSolicitudes(1, dataGridView2);//rechazadas
             }
-            
-    
+            else if (tabControl1.SelectedIndex == 2)
+            {
+                cargarDatosSolicitudes(2, dataGridView3);//aprobadas
+            }
+
+
         }
 
 
@@ -106,6 +111,10 @@ namespace WindowsFormsApplication1
             else if (bandera == 1)
             {
                 cn.CargarDatos("select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND estadosolicitud='rechazada' AND departamento ='" + facultad + "'", dgv);
+            }
+            else if (bandera == 2)
+            {
+                cn.CargarDatos("select nombre AS NOMBRE_SOLICITANTE, fechasalida AS FECHA_SALIDA, fecharetorno AS FECHA_RETORNO, descripcion AS MOTIVO from Usuarios, MotivoViaje, solicitudreserva where Usuarios.idusuario = solicitudreserva.idusuario AND motivoviaje.idMotivoViaje = solicitudreserva.idMotivoViaje AND estadosolicitud='aprobada1' AND departamento ='" + facultad + "'", dgv);
             }
         }
 
