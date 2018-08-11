@@ -20,14 +20,14 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private string motivo;
         private int idmotivo;
         private int idUsuario;
-        private int idLugar;
+        private String lugar;
         private int numeroPersonas;
         private Conexion cnx = new Conexion();
         private SqlConnection conn;
 
-
-        public CSSolicitudDeViaje(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas, int idmotivo)
+        public CSSolicitudDeViaje(string correoInstitucional, string nombreCompletoSolicitante, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, string motivo, int numeroPersonas)
         {
+            conn = new SqlConnection(cnx.stringConexion);
             this.correoInstitucional = correoInstitucional;
             this.nombreCompletoSolicitante = nombreCompletoSolicitante;
             this.destino = destino;
@@ -39,6 +39,10 @@ namespace WindowsFormsApplication1.ModuloFormularios
             this.numeroPersonas = numeroPersonas;
         }
 
+        public CSSolicitudDeViaje() {
+            conn = new SqlConnection(cnx.stringConexion);
+        }
+
         public int getNumeroPersonas()
         {
             return this.numeroPersonas;
@@ -47,7 +51,6 @@ namespace WindowsFormsApplication1.ModuloFormularios
         public void setNumeroPersonas(int numeroPersonas)
         {
             this.numeroPersonas = numeroPersonas;
-
         }
 
         public string getMotivo()
@@ -126,7 +129,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
             this.nombreCompletoSolicitante = nombreCompletoSolicitante;
 
         }
-        
+
         public string getCorreoInstitucional()
         {
             return this.correoInstitucional;
@@ -138,54 +141,80 @@ namespace WindowsFormsApplication1.ModuloFormularios
 
         }
 
-        public void setIDs(int idmotivo,int idUsuario, int idLugar) {
+        public void setIDs(int idmotivo, int idUsuario) {
             this.idmotivo = idmotivo;
             this.idUsuario = idUsuario;
-            this.idLugar = idLugar;
+        }
+
+        public void setLugar(String lugar) {
+            this.lugar = lugar;
+        }
+
+        public void setAtributos(string correoInstitucional, string nombreCompletoSolicitante) {
+            this.correoInstitucional = correoInstitucional;
+            this.nombreCompletoSolicitante = nombreCompletoSolicitante;
+            this.destino = destino;
+            this.fechaSalida = fechaSalida;
+            this.horaSalida = horaSalida;
+            this.fechaRetorno = fechaRetorno;
+            this.horaRetorno = horaRetorno;
+            this.motivo = motivo;
+            this.numeroPersonas = numeroPersonas;
+        }
+
+        public void actualizarLugares(ComboBox destino) {
+            SqlDataReader reader = null;
+            conn.Open();
+        }
+
+        public void llenarCorreo(TextBox correobox)
+        {
+            correobox.Text = this.correoInstitucional;
+        }
+
+        public void llenarNombre(TextBox nombrebox) {
+            nombrebox.Text = this.nombreCompletoSolicitante;
+        }
+
+        public void llenarMotivos(ComboBox comboBoxMotivos) {
+            conn = new SqlConnection(cnx.stringConexion);
+            try
+            {
+                conn.Open();
+                SqlCommand comando = new SqlCommand("SELECT idMotivoViaje, descripcion FROM dbo.MotivoViaje", conn);
+                SqlDataReader reader = comando.ExecuteReader();
+                comboBoxMotivos.DisplayMember = "Text";
+                comboBoxMotivos.ValueMember = "Value";
+                while (reader.Read())
+                {
+                    comboBoxMotivos.Items.Add(new { Text = reader[1], Value = reader[0] });
+
+                }
+                comboBoxMotivos.SelectedIndex = 0;
+            } catch (Exception e) {
+                Console.WriteLine(e.ToString());
+            }
         }
 
         public void guardarEnBase() {
-
-            String idSolicitante;
+           
             try
             {
+                
                 cnx = new Conexion();
                 conn = new SqlConnection(cnx.stringConexion);
-                SqlDataReader reader = null;
-                String sql = "select idSolicitante from Solicitante where nombreSolicitante='" + nombreCompletoSolicitante + "'";
-                conn.Open();
-                SqlCommand comando = new SqlCommand(sql, conn);
-                reader = comando.ExecuteReader();
-                while (reader.Read())
-                {
-                    idSolicitante = "" + reader[0];
-                }
-                conn.Close();
-            }
-            catch (Exception er)
-            {
-                MessageBox.Show("Error");
-                Console.WriteLine(er.ToString());
-            }
-
-            try
-            {
                 DateTime thisDay = DateTime.Today;
-                cnx = new Conexion();
-                conn = new SqlConnection(cnx.stringConexion);
+                String sql = "insert into SolicitudReservaTest(idMotivoViaje,idusuario,lugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva)" +
+                       " values(" + idmotivo + " , " + 1 + " , '" + destino + "' , " + numeroPersonas + " , '" + fechaSalida + " " + horaSalida + "','" + fechaRetorno + " " + horaRetorno + "','en espera','" + thisDay.ToString() + "')";
                 conn.Open();
-                String sql = "insert into SolicitudReserva(idMotivoViaje,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
-                    "values(" + idmotivo + "," + idUsuario + "," + idLugar + ",'" +  numeroPersonas + "," + fechaSalida +" "+horaSalida+"','" + fechaRetorno + " " + horaRetorno + "','en espera','" +thisDay.ToString() + "')";
                 SqlCommand comando = new SqlCommand(sql, conn);
                 int resultado = comando.ExecuteNonQuery();
-                MessageBox.Show("" + sql);
             }
             catch (Exception er)
             {
                 MessageBox.Show("Error");
                 Console.WriteLine(er.ToString());
             }
-
 
 
         }

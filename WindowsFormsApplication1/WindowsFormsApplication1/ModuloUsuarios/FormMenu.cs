@@ -178,6 +178,7 @@ namespace WindowsFormsApplication1
 
         private void btnReservas_Click(object sender, EventArgs e)
         {
+            fm1.mostrarFormularios(this);
 
         }
        // public void mostrarReportes(FormMenu frmMenu)
