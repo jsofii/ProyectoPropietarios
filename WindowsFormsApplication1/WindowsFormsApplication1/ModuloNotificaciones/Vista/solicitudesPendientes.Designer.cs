@@ -142,7 +142,7 @@
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(542, 298);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
