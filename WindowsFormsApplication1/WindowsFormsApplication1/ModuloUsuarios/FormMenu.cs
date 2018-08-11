@@ -180,7 +180,7 @@ namespace WindowsFormsApplication1
         {
             //crear usuario y enviar xfavor
             //FachadaFormularios fch_formulario = new FachadaFormularios(this, usuario);
-
+            fm1.mostrarFormulario(this);
         }
 
         private void btnNotificaciones_Click(object sender, EventArgs e)

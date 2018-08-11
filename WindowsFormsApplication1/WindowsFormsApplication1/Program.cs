@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1.ModuloFormularios;
 using WindowsFormsApplication1.ModuloReportesEstadisticos;
 
 namespace WindowsFormsApplication1
@@ -32,9 +33,10 @@ namespace WindowsFormsApplication1
             //String[] caro = { "jajaja", "jujuju" };
           //  Application.Run(new ModuloFormularios.FrmReporteConductor("099900","juan Perez",caro));
 
-            Application.Run(new ModuloFormularios.FrmCalificacionServicio());
-
-
+            //Application.Run(new ModuloFormularios.FrmCalificacionServicio());
+            Application.Run(new FormLogin());
+            
+                //Application.Run(new FrmCalificacionServicio());
             //SIMULACION LOGIN
 
             /*
