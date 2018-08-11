@@ -77,6 +77,7 @@ namespace ModuloFormularios
                     //MessageBox.Show(reporteConductor.getIdReservaAprobada() + " " + txt_idConductor.Text + " " + reporteConductor.getNombreCompletoConductor()
                     //  + " " + rb_inconvenienteT.Checked + " " + rb_inconvenienteF.Checked + " " + reporteConductor.getDescripcionInconveniente() + " " +
                     // reporteConductor.getDineroGastadoEnGasolina() + " " + reporteConductor.getComportameientoPasajeros());
+//
                     reporteConductor.guardarEnBase();
                 }
                 else {
