@@ -78,7 +78,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
-            this.label2.Image = global::WindowsFormsApplication1.Properties.Resources.tasks;
+            //this.label2.Image = global::WindowsFormsApplication1.Properties.Resources.tasks;
             this.label2.Location = new System.Drawing.Point(9, 65);
             this.label2.MaximumSize = new System.Drawing.Size(256, 256);
             this.label2.MinimumSize = new System.Drawing.Size(256, 256);
