@@ -70,7 +70,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.label6.Image = global::WindowsFormsApplication1.Properties.Resources.clipboard;
+           // this.label6.Image = global::WindowsFormsApplication1.Properties.Resources.clipboard;
             this.label6.Location = new System.Drawing.Point(2, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.MaximumSize = new System.Drawing.Size(192, 208);
@@ -83,7 +83,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label5.AutoSize = true;
-            this.label5.Image = global::WindowsFormsApplication1.Properties.Resources.clipboard_1_;
+           // this.label5.Image = global::WindowsFormsApplication1.Properties.Resources.clipboard_1_;
             this.label5.Location = new System.Drawing.Point(198, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.MaximumSize = new System.Drawing.Size(192, 208);
