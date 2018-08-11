@@ -117,5 +117,10 @@ namespace ModuloFormularios
             //    Console.WriteLine(er.ToString());
             //}
         }
+
+        private void comboBoxDestinos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

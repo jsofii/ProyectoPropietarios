@@ -147,7 +147,16 @@ namespace WindowsFormsApplication1
 
         private void btnUser_Click(object sender, EventArgs e)
         {
+
+
+
+
             fm1.mostrarDatos(this);
+
+
+
+
+
         }
 
 

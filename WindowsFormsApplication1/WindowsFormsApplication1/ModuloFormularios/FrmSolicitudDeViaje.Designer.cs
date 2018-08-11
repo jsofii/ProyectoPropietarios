@@ -273,6 +273,7 @@
             this.comboBoxDestinos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comboBoxDestinos.Size = new System.Drawing.Size(279, 26);
             this.comboBoxDestinos.TabIndex = 1;
+            this.comboBoxDestinos.SelectedIndexChanged += new System.EventHandler(this.comboBoxDestinos_SelectedIndexChanged);
             // 
             // tableLayoutPanel5
             // 

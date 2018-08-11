@@ -1058,6 +1058,30 @@ namespace WindowsFormsApp1.ModuloDisponibilidad
             Calendario a = new Calendario();
             a.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel60_Paint(object sender, PaintEventArgs e)
+        {
+            
+           
+                
+             
+        }
+
+        private void panel60_DoubleClick(object sender, EventArgs e)
+        {
+            MenuDisponibilidad a = new MenuDisponibilidad();
+            a.Show();
+        }
     }
 }
     
