@@ -215,9 +215,9 @@ namespace WindowsFormsApplication1
             fm1.mostrarModvehiculo(this);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_formularios_Click(object sender, EventArgs e)
         {
-
+            fm1.mostrarFormularios(this);
         }
 
         protected override void WndProc(ref Message m)

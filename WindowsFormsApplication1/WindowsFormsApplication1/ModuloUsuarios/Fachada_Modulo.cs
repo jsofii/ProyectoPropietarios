@@ -19,8 +19,8 @@ namespace WindowsFormsApplication1
         mdiModVehiculo frmVehi = new mdiModVehiculo();
         solicitudesPendientes solicitudes;
         String aux;
-        MainFormularioConductor frmConductor;
-        MainFormularioProfesor frmProfesor;
+        FrmPrincipalChofer frmConductor;
+       FrmPrincipalFormularioProfesor frmProfesor;
 
 
         //FrmReporteHistorialKilometraje frmRep
@@ -140,6 +140,21 @@ namespace WindowsFormsApplication1
             frmMenú.panelContenedor.Controls.Add(fh);
             frmMenú.panelContenedor.Tag = fh;
             fh.Show();
+        }
+
+        public void mostrarFormularios(FormMenu frmMenu)
+        {
+            if (usuario.IDcargo1 == 5)
+            {
+                frmConductor = new FrmPrincipalChofer();
+                //(((usuario.IDusuario1+"", usuario.Nombre);
+                mostrarMódulo(frmMenu, frmConductor);
+            }
+            else
+            {
+                //                frmProfesor = new MainFormularioProfesor(usuario.IDusuario1 + "", usuario.Nombre);
+
+            }
         }
         public void mostrarNotificaciones(FormMenu frmMenu)
         {

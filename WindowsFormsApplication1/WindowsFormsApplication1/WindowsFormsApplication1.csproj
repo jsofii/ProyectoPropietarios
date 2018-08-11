@@ -79,6 +79,24 @@
     <Compile Include="ModuloFormularios\CSListaSolicitudDeViaje.cs" />
     <Compile Include="ModuloFormularios\CSReporteConductor.cs" />
     <Compile Include="ModuloFormularios\CSSolicitudDeViaje.cs" />
+    <Compile Include="ModuloFormularios\FrmMensajeError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloFormularios\FrmMensajeError.designer.cs">
+      <DependentUpon>FrmMensajeError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloFormularios\FrmPrincipalChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloFormularios\FrmPrincipalChofer.designer.cs">
+      <DependentUpon>FrmPrincipalChofer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloFormularios\FrmPrincipalFormularioProfesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuloFormularios\FrmPrincipalFormularioProfesor.designer.cs">
+      <DependentUpon>FrmPrincipalFormularioProfesor.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModuloFormularios\FrmSolicitudDeViaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +269,15 @@
     <EmbeddedResource Include="ModuloFormularios\FrmCalificacionServicio.resx">
       <DependentUpon>FrmCalificacionServicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModuloFormularios\FrmMensajeError.resx">
+      <DependentUpon>FrmMensajeError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloFormularios\FrmPrincipalChofer.resx">
+      <DependentUpon>FrmPrincipalChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuloFormularios\FrmPrincipalFormularioProfesor.resx">
+      <DependentUpon>FrmPrincipalFormularioProfesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModuloFormularios\FrmReporteConductor.resx">
       <DependentUpon>FrmReporteConductor.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +395,11 @@
     <None Include="Resources\icons8-cancelar-30.png" />
     <None Include="Resources\icons8-atención-64.png" />
     <None Include="Resources\icons8-encuesta-64.png" />
+    <Content Include="Resources\clipboard%281%29.png" />
+    <Content Include="Resources\clipboard.png" />
+    <Content Include="Resources\clipboard1.2.png" />
+    <Content Include="Resources\clipboard1.3.png" />
+    <Content Include="Resources\tasks.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
