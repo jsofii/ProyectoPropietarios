@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
             Conexion conect = new Conexion();
             //simuladorLogin log = new simuladorLogin();
             // log.ShowDialog();
-
+            // Hola a todos esta es la tercera prueba
 
             // conect.query("insert into NotificacionRuta values ('rut2','2-jun-2019');");
             // conect.abrir();
